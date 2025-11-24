@@ -1,501 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Samridhi Daksh Avenue Flat Resale</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <title>Samridhi Daksh Avenue • 1980 sq ft Luxury Resale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        body {
-            background: #f7f4f0;
-            color: #1f2933;
-        }
+  <style>
+    /* RESET */
+    * { margin:0; padding:0; box-sizing:border-box; font-family: 'Inter', system-ui; }
 
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+    body {
+      background:#fafafa;
+      color:#1a1a1a;
+      line-height:1.55;
+    }
 
-        header {
-            padding: 16px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #e2e2e2;
-            background: #fff;
-        }
+    /* HEADER */
+    header {
+      background:#ffffff;
+      border-bottom:1px solid #e5e7eb;
+      padding:18px 28px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
 
-        header h1 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #14532d;
-        }
+    header h1 {
+      font-size:22px;
+      font-weight:700;
+      color:#0d4d2d;
+    }
 
-        header span {
-            font-size: 13px;
-            color: #64748b;
-        }
+    header span {
+      display:block;
+      font-size:13px;
+      color:#6b7280;
+      margin-top:2px;
+    }
 
-        .cta-call {
-            font-weight: 600;
-            color: #14532d;
-            font-size: 14px;
-        }
+    .cta-call a {
+      font-size:14px;
+      color:#0d4d2d;
+      font-weight:600;
+      text-decoration:none;
+    }
 
-        .cta-call a {
-            color: #14532d;
-            text-decoration: none;
-        }
+    /* MAIN LAYOUT */
+    main {
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:32px;
+      padding:32px;
+    }
 
-        main {
-            flex: 1;
-            display: flex;
-            flex-wrap: wrap;
-            padding: 24px;
-            gap: 24px;
-        }
+    @media(max-width:992px){
+      main { grid-template-columns:1fr; padding:20px; }
+    }
 
-        .left,
-        .right {
-            flex: 1 1 320px;
-        }
+    /* BADGE */
+    .badge {
+      display:inline-block;
+      background:#e8f7ef;
+      color:#0f5132;
+      padding:4px 12px;
+      border-radius:30px;
+      font-size:13px;
+      font-weight:600;
+      margin-bottom:12px;
+    }
 
-        .badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: #ecfdf3;
-            color: #166534;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
+    /* HEADINGS */
+    h2 {
+      font-size:28px;
+      font-weight:700;
+      margin-bottom:12px;
+      color:#0f172a;
+    }
 
-        h2 {
-            font-size: 26px;
-            margin-bottom: 8px;
-            color: #0f172a;
-        }
+    .subtitle {
+      color:#555;
+      font-size:15px;
+      margin-bottom:20px;
+    }
 
-        .subtitle {
-            font-size: 14px;
-            color: #64748b;
-            margin-bottom: 16px;
-        }
+    /* IMAGES */
+    .flat-image {
+      width:100%;
+      border-radius:14px;
+      margin-bottom:20px;
+      object-fit:cover;
+    }
 
-        .highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 18px;
-        }
+    /* HIGHLIGHT PILLS */
+    .highlights {
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:22px;
+    }
 
-        .pill {
-            padding: 6px 12px;
-            border-radius: 999px;
-            background: #e5f3ea;
-            font-size: 12px;
-            color: #14532d;
-        }
+    .pill {
+      background:#e6f3e9;
+      padding:7px 14px;
+      font-size:13px;
+      border-radius:30px;
+      color:#0d4d2d;
+      font-weight:500;
+    }
 
-        .key-metrics {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-bottom: 18px;
-        }
+    /* METRICS CARD STYLE */
+    .key-metrics {
+      display:flex;
+      flex-wrap:wrap;
+      gap:16px;
+      margin-bottom:26px;
+    }
 
-        .metric {
-            background: #fff;
-            padding: 10px 12px;
-            border-radius: 10px;
-            min-width: 120px;
-            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
-        }
+    .metric {
+      background:#ffffff;
+      padding:14px 16px;
+      border-radius:12px;
+      min-width:150px;
+      box-shadow:0 4px 25px rgba(0,0,0,0.06);
+    }
 
-        .metric-label {
-            font-size: 11px;
-            color: #6b7280;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            margin-bottom: 4px;
-        }
+    .metric-label {
+      font-size:11px;
+      text-transform:uppercase;
+      color:#6b7280;
+      margin-bottom:4px;
+      letter-spacing:.5px;
+    }
 
-        .metric-value {
-            font-size: 15px;
-            font-weight: 700;
-            color: #0f172a;
-        }
+    .metric-value {
+      font-size:15px;
+      font-weight:700;
+    }
 
-        .amenities-title {
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #111827;
-        }
+    /* AMENITIES */
+    .amenities-title {
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:10px;
+      color:#111827;
+    }
 
-        .amenities {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 8px;
-            font-size: 12px;
-            color: #374151;
-            margin-bottom: 20px;
-        }
+    .amenities {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+      gap:10px 14px;
+      margin-bottom:26px;
+    }
 
-        .amenity {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
+    .amenity { display:flex; align-items:center; gap:8px; }
+    .amenity img { width:20px; opacity:.85; }
 
-        .amenity-icon {
-            width: 18px;
-            height: 18px;
-            border-radius: 999px;
-            background: #14532d;
-            color: #f9fafb;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 11px;
-        }
+    /* CTA BOX */
+    .cta-box {
+      background:#0d4d2d;
+      padding:18px 20px;
+      border-radius:16px;
+      color:#e6ffe9;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:12px;
+    }
 
-        .cta-box {
-            background: #14532d;
-            color: #ecfdf3;
-            padding: 14px 16px;
-            border-radius: 14px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-        }
+    .cta-box strong { font-size:16px; }
 
-        .cta-box strong {
-            font-size: 15px;
-        }
+    .cta-actions a {
+      padding:10px 16px;
+      border-radius:30px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:14px;
+      display:inline-block;
+    }
 
-        .cta-actions {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
+    .btn-primary {
+      background:#facc15;
+      color:#4a3205;
+      border:1px solid #eab308;
+    }
 
-        .btn-primary,
-        .btn-outline {
-            border-radius: 999px;
-            padding: 8px 14px;
-            font-size: 13px;
-            font-weight: 600;
-            border: 1px solid transparent;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
+    .btn-outline {
+      border:1px solid #f0fff4;
+      color:#ffffff;
+    }
 
-        .btn-primary {
-            background: #facc15;
-            color: #422006;
-            border-color: #eab308;
-        }
+    /* RIGHT SIDEBAR CARD */
+    .card {
+      background:#ffffff;
+      padding:18px;
+      border-radius:16px;
+      box-shadow:0 8px 40px rgba(0,0,0,0.08);
+    }
 
-        .btn-outline {
-            background: transparent;
-            color: #ecfdf3;
-            border-color: #ecfdf3;
-        }
+    .property-tag {
+      font-size:12px;
+      color:#6b7280;
+      font-weight:600;
+      margin-bottom:14px;
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
 
-        .card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 16px;
-            box-shadow: 0 15px 45px rgba(15, 23, 42, 0.08);
-        }
+    .photo-title {
+      font-size:17px;
+      font-weight:700;
+      margin-top:10px;
+    }
 
-        .property-tag {
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: #6b7280;
-            margin-bottom: 10px;
-        }
+    .photo-sub {
+      font-size:13px;
+      color:#555;
+      margin-bottom:14px;
+    }
 
-        .rera {
-            font-size: 11px;
-            color: #4b5563;
-            margin-top: 10px;
-        }
+    .photo-grid {
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      font-size:13px;
+    }
 
-        .rera span {
-            font-weight: 600;
-            color: #111827;
-        }
+    .photo-dot {
+      width:7px;
+      height:7px;
+      background:#16a34a;
+      border-radius:50%;
+      display:inline-block;
+      margin-right:6px;
+    }
 
-        .photo-placeholder {
-            width: 100%;
-            border-radius: 14px;
-            background: linear-gradient(135deg, #f97316, #16a34a);
-            padding: 2px;
-            margin-bottom: 14px;
-        }
-
-        .photo-inner {
-            border-radius: 12px;
-            background: radial-gradient(circle at top left, #fefce8, #f9fafb);
-            padding: 14px;
-            min-height: 180px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .photo-badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: #f97316;
-            color: #fff;
-            font-size: 11px;
-            padding: 4px 8px;
-            border-radius: 999px;
-            font-weight: 600;
-        }
-
-        .photo-title {
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: #0f172a;
-        }
-
-        .photo-sub {
-            font-size: 12px;
-            color: #4b5563;
-            margin-bottom: 10px;
-        }
-
-        .photo-grid {
-            display: flex;
-            gap: 10px;
-            font-size: 11px;
-            color: #374151;
-            flex-wrap: wrap;
-        }
-
-        .photo-col {
-            flex: 1 1 120px;
-        }
-
-        .photo-dot {
-            width: 6px;
-            height: 6px;
-            border-radius: 999px;
-            background: #16a34a;
-            display: inline-block;
-            margin-right: 6px;
-        }
-
-        img.flat-image {
-            width: 100%;
-            border-radius: 14px;
-            margin-bottom: 16px;
-        }
-
-        img.amenity-icon-img {
-            width: 18px;
-            height: 18px;
-            object-fit: contain;
-        }
-
-        footer {
-            padding: 14px 24px;
-            font-size: 11px;
-            color: #9ca3af;
-            text-align: center;
-        }
-
-        footer span {
-            font-weight: 600;
-            color: #4b5563;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
-            }
-
-            main {
-                padding: 16px;
-            }
-
-            .hero {
-                min-height: auto;
-            }
-        }
-    </style>
+    footer {
+      text-align:center;
+      padding:14px;
+      font-size:11px;
+      color:#9ca3af;
+      margin-top:20px;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="hero">
-        <header>
-            <div>
-                <h1>Samridhi Daksh Avenue</h1>
-                <span>Sector 150, Noida • Flat Resale</span>
-            </div>
-            <div class="cta-call">
-                Call / WhatsApp: <a href="tel:+918979333131">+91 89793 33131</a>
-            </div>
-        </header>
-
-        <main>
-            <section class="left">
-                <span class="badge">Premium 3 BHK • Ready-to-move resale</span>
-                <h2>1980 sq ft luxury apartment for sale</h2>
-                <img class="flat-image"
-                    src="https://user-gen-media-assets.s3.amazonaws.com/857dc558-a2ba-43a6-8079-988bb8820fc9/pages/page_1.jpg"
-                    alt="Samridhi Daksh Avenue Building" />
-                <p class="subtitle">
-                    Spacious, park-facing home in a low-density luxury project with world‑class amenities and excellent
-                    expressway connectivity.
-                </p>
-
-                <div class="highlights">
-                    <div class="pill">Carpet approx. 1980 sq ft</div>
-                    <div class="pill">Samridhi Daksh Avenue, Sec‑150</div>
-                    <div class="pill">High floor • Great ventilation</div>
-                    <div class="pill">Well-maintained resale unit</div>
-                </div>
-
-                <div class="key-metrics">
-                    <div class="metric">
-                        <div class="metric-label">Configuration</div>
-                        <div class="metric-value">3 BHK + 4T + Servant</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-label">Super area</div>
-                        <div class="metric-value">1980 sq ft</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-label">Location</div>
-                        <div class="metric-value">Sector 150, Noida</div>
-                    </div>
-                </div>
-
-                <p class="amenities-title">Project highlights</p>
-                <div class="amenities">
-                    <div class="amenity">
-                        <img class="amenity-icon-img"
-                            src="https://img.icons8.com/ios-filled/50/14532d/swimming-pool.png" alt="Swimming Pool" />
-                        <span>Swimming pool & clubhouse</span>
-                    </div>
-                    <div class="amenity">
-                        <img class="amenity-icon-img" src="https://img.icons8.com/ios-filled/50/14532d/dumbbell.png"
-                            alt="Gym" />
-                        <span>Fully equipped gym & indoor games</span>
-                    </div>
-                    <div class="amenity">
-                        <img class="amenity-icon-img" src="https://img.icons8.com/ios-filled/50/14532d/park-bench.png"
-                            alt="Park" />
-                        <span>Large green park & kids play area</span>
-                    </div>
-                    <div class="amenity">
-                        <img class="amenity-icon-img"
-                            src="https://img.icons8.com/ios-filled/50/14532d/security-checked.png" alt="Security" />
-                        <span>Gated community with 24×7 security</span>
-                    </div>
-                    <div class="amenity">
-                        <img class="amenity-icon-img" src="https://img.icons8.com/ios-filled/50/14532d/parking.png"
-                            alt="Parking" />
-                        <span>Ample covered parking</span>
-                    </div>
-                    <div class="amenity">
-                        <img class="amenity-icon-img" src="https://img.icons8.com/ios-filled/50/14532d/marker.png"
-                            alt="Location" />
-                        <span>Quick access to Noida Expressway</span>
-                    </div>
-                </div>
-
-                <div class="cta-box">
-                    <div>
-                        <strong>Interested in this flat?</strong>
-                        <div style="font-size:12px; opacity:0.9;">
-                            Get the price, floor plan & visit slot in one quick call.
-                        </div>
-                    </div>
-                    <div class="cta-actions">
-                        <a class="btn-primary" href="tel:+918979333131">📞 Call now</a>
-                        <a class="btn-outline" href="https://wa.me/918979333131" target="_blank" rel="noopener">
-                            💬 WhatsApp details
-                        </a>
-                    </div>
-                </div>
-
-                <p class="rera">
-                    RERA Reg. No.: <span>UPRERAPRJ155408</span> • All details are subject to availability and
-                    verification.
-                </p>
-            </section>
-
-            <aside class="right">
-                <div class="card">
-                    <div class="property-tag">Featured resale unit</div>
-                    <div class="photo-placeholder">
-                        <img class="flat-image"
-                            src="https://user-gen-media-assets.s3.amazonaws.com/857dc558-a2ba-43a6-8079-988bb8820fc9/pages/page_2.jpg"
-                            alt="Flat layout" />
-                        <div class="photo-badge">Limited inventory</div>
-                        <div class="photo-title">Bright, well-planned layout</div>
-                        <div class="photo-sub">Ideal for end-use or investment in a fast-growing green sector of Noida.
-                        </div>
-                        <div class="photo-grid">
-                            <div class="photo-col">
-                                <div><span class="photo-dot"></span>Modern tower with lifts</div>
-                                <div><span class="photo-dot"></span>Spacious drawing & dining</div>
-                                <div><span class="photo-dot"></span>Balconies with open views</div>
-                            </div>
-                            <div class="photo-col">
-                                <div><span class="photo-dot"></span>Premium clubhouse access</div>
-                                <div><span class="photo-dot"></span>Sports & wellness facilities</div>
-                                <div><span class="photo-dot"></span>Planned, low-density community</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <img class="flat-image"
-                        src="https://user-gen-media-assets.s3.amazonaws.com/857dc558-a2ba-43a6-8079-988bb8820fc9/pages/page_3.jpg"
-                        alt="Interior or amenity view" />
-
-                    <div style="font-size:12px; color:#4b5563; margin-bottom:10px;">
-                        Exact price, floor, and tower details will be shared on enquiry. Site visit can be scheduled on
-                        prior appointment only.
-                    </div>
-                    <div style="font-size:11px; color:#9ca3af;">
-                        Images are for representational purposes only. Final specifications and availability will be
-                        confirmed at the time of booking.
-                    </div>
-                </div>
-            </aside>
-        </main>
-
-        <footer>
-            © <span>Samridhi Daksh Avenue Resale Listing</span> • For marketing enquiries only. Please verify all
-            details independently before purchase.
-        </footer>
+  <header>
+    <div>
+      <h1>Samridhi Daksh Avenue</h1>
+      <span>Sector 150, Noida • Premium Resale</span>
     </div>
-</body>
+    <div class="cta-call">
+      <a href="tel:+918979333131">📞 +91 89793 33131</a>
+    </div>
+  </header>
 
+  <main>
+    <!-- LEFT SECTION -->
+    <section>
+      <span class="badge">Premium 3 BHK • Ready-to-Move Resale</span>
+      <h2>1980 sq ft Luxury Apartment for Sale</h2>
+
+      <img class="flat-image" src="https://user-gen-media-assets.s3.amazonaws.com/857dc558-a2ba-43a6-8079-988bb8820fc9/pages/page_1.jpg">
+
+      <p class="subtitle">
+        Spacious, park-facing home in a low-density luxury township with world-class amenities and excellent
+        expressway connectivity.
+      </p>
+
+      <div class="highlights">
+        <div class="pill">1980 sq ft Super Area</div>
+        <div class="pill">Premium 3BHK + Servant</div>
+        <div class="pill">High Floor • Ventilated</div>
+        <div class="pill">Prime Sector 150 Noida</div>
+      </div>
+
+      <div class="key-metrics">
+        <div class="metric">
+          <div class="metric-label">Configuration</div>
+          <div class="metric-value">3 BHK + 4T + Servant</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Super area</div>
+          <div class="metric-value">1980 sq ft</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Location</div>
+          <div class="metric-value">Sector 150, Noida</div>
+        </div>
+      </div>
+
+      <p class="amenities-title">Project Highlights</p>
+
+      <div class="amenities">
+        <div class="amenity"><img src="https://img.icons8.com/ios-filled/50/14532d/swimming-pool.png"> Swimming Pool & Clubhouse</div>
+        <div class="amenity"><img src="https://img.icons8.com/ios-filled/50/14532d/dumbbell.png"> Gym & Indoor Games</div>
+        <div class="amenity"><img src="https://img.icons8.com/ios-filled/50/14532d/park-bench.png"> Green Park & Kids Area</div>
+        <div class="amenity"><img src="https://img.icons8.com/ios-filled/50/14532d/security-checked.png"> 24×7 Security</div>
+        <div class="amenity"><img src="https://img.icons8.com/ios-filled/50/14532d/parking.png"> Covered Parking</div>
+        <div class="amenity"><img src="https://img.icons8.com/ios-filled/50/14532d/marker.png"> Quick Expressway Access</div>
+      </div>
+
+      <div class="cta-box">
+        <div>
+          <strong>Interested in this flat?</strong><br>
+          <span style="font-size:13px;">Get the price & floor-plan in a quick call.</span>
+        </div>
+        <div class="cta-actions">
+          <a class="btn-primary" href="tel:+918979333131">📞 Call Now</a>
+          <a class="btn-outline" href="https://wa.me/918979333131">💬 WhatsApp Details</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT SIDEBAR -->
+    <aside class="card">
+      <div class="property-tag">Featured Unit</div>
+
+      <img class="flat-image" src="https://user-gen-media-assets.s3.amazonaws.com/857dc558-a2ba-43a6-8079-988bb8820fc9/pages/page_2.jpg">
+
+      <div class="photo-title">Bright, Well-Designed Layout</div>
+      <div class="photo-sub">
+        Ideal for end-use or investment in Noida’s fastest-growing green zone.
+      </div>
+
+      <div class="photo-grid">
+        <div><span class="photo-dot"></span> Modern Tower</div>
+        <div><span class="photo-dot"></span> Spacious Dining</div>
+        <div><span class="photo-dot"></span> Open Balconies</div>
+        <div><span class="photo-dot"></span> Premium Club</div>
+        <div><span class="photo-dot"></span> Wellness Facilities</div>
+      </div>
+
+      <img class="flat-image" src="https://user-gen-media-assets.s3.amazonaws.com/857dc558-a2ba-43a6-8079-988bb8820fc9/pages/page_3.jpg">
+
+      <p style="font-size:12px; color:#666; margin-top:10px;">
+        Price, tower & floor details will be shared on enquiry. Site visits via prior appointment.
+      </p>
+    </aside>
+
+  </main>
+
+  <footer>
+    RERA Reg. No.: UPRERAPRJ155408 • All details are subject to availability & verification.
+  </footer>
+
+</body>
 </html>
