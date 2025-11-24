@@ -307,6 +307,18 @@
             margin-right: 6px;
         }
 
+        img.flat-image {
+            width: 100%;
+            border-radius: 14px;
+            margin-bottom: 16px;
+        }
+
+        img.amenity-icon-img {
+            width: 18px;
+            height: 18px;
+            object-fit: contain;
+        }
+
         footer {
             padding: 14px 24px;
             font-size: 11px;
@@ -353,6 +365,7 @@
             <section class="left">
                 <span class="badge">Premium 3 BHK • Ready-to-move resale</span>
                 <h2>1980 sq ft luxury apartment for sale</h2>
+                <img class="flat-image" src="https://example.com/flat-photo.jpg" alt="Samridhi Daksh Avenue flat" />
                 <p class="subtitle">
                     Spacious, park-facing home in a low-density luxury project with world‑class amenities and excellent
                     expressway connectivity.
@@ -383,27 +396,33 @@
                 <p class="amenities-title">Project highlights</p>
                 <div class="amenities">
                     <div class="amenity">
-                        <div class="amenity-icon">🏊</div>
+                        <img class="amenity-icon-img"
+                            src="https://img.icons8.com/ios-filled/50/14532d/swimming-pool.png" alt="Swimming Pool" />
                         <span>Swimming pool & clubhouse</span>
                     </div>
                     <div class="amenity">
-                        <div class="amenity-icon">🏋</div>
+                        <img class="amenity-icon-img" src="https://img.icons8.com/ios-filled/50/14532d/dumbbell.png"
+                            alt="Gym" />
                         <span>Fully equipped gym & indoor games</span>
                     </div>
                     <div class="amenity">
-                        <div class="amenity-icon">🌳</div>
+                        <img class="amenity-icon-img" src="https://img.icons8.com/ios-filled/50/14532d/park-bench.png"
+                            alt="Park" />
                         <span>Large green park & kids play area</span>
                     </div>
                     <div class="amenity">
-                        <div class="amenity-icon">🛡</div>
+                        <img class="amenity-icon-img"
+                            src="https://img.icons8.com/ios-filled/50/14532d/security-checked.png" alt="Security" />
                         <span>Gated community with 24×7 security</span>
                     </div>
                     <div class="amenity">
-                        <div class="amenity-icon">🅿</div>
+                        <img class="amenity-icon-img" src="https://img.icons8.com/ios-filled/50/14532d/parking.png"
+                            alt="Parking" />
                         <span>Ample covered parking</span>
                     </div>
                     <div class="amenity">
-                        <div class="amenity-icon">📍</div>
+                        <img class="amenity-icon-img" src="https://img.icons8.com/ios-filled/50/14532d/marker.png"
+                            alt="Location" />
                         <span>Quick access to Noida Expressway</span>
                     </div>
                 </div>
@@ -433,22 +452,21 @@
                 <div class="card">
                     <div class="property-tag">Featured resale unit</div>
                     <div class="photo-placeholder">
-                        <div class="photo-inner">
-                            <div class="photo-badge">Limited inventory</div>
-                            <div class="photo-title">Bright, well‑planned layout</div>
-                            <div class="photo-sub">Ideal for end‑use or investment in a fast‑growing green sector of
-                                Noida.</div>
-                            <div class="photo-grid">
-                                <div class="photo-col">
-                                    <div><span class="photo-dot"></span>Modern tower with lifts</div>
-                                    <div><span class="photo-dot"></span>Spacious drawing & dining</div>
-                                    <div><span class="photo-dot"></span>Balconies with open views</div>
-                                </div>
-                                <div class="photo-col">
-                                    <div><span class="photo-dot"></span>Premium clubhouse access</div>
-                                    <div><span class="photo-dot"></span>Sports & wellness facilities</div>
-                                    <div><span class="photo-dot"></span>Planned, low‑density community</div>
-                                </div>
+                        <img class="flat-image" src="https://example.com/flat-layout.jpg" alt="Flat layout" />
+                        <div class="photo-badge">Limited inventory</div>
+                        <div class="photo-title">Bright, well-planned layout</div>
+                        <div class="photo-sub">Ideal for end-use or investment in a fast-growing green sector of Noida.
+                        </div>
+                        <div class="photo-grid">
+                            <div class="photo-col">
+                                <div><span class="photo-dot"></span>Modern tower with lifts</div>
+                                <div><span class="photo-dot"></span>Spacious drawing & dining</div>
+                                <div><span class="photo-dot"></span>Balconies with open views</div>
+                            </div>
+                            <div class="photo-col">
+                                <div><span class="photo-dot"></span>Premium clubhouse access</div>
+                                <div><span class="photo-dot"></span>Sports & wellness facilities</div>
+                                <div><span class="photo-dot"></span>Planned, low-density community</div>
                             </div>
                         </div>
                     </div>
