@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noida Lux Homes - Premium Real Estate Solutions</title>
-    <meta name="description" content="Discover premium residential and commercial properties in Noida. Luxury apartments, villas, and commercial spaces.">
+    <title>Samriddhi Daksh Avenue | Premium 3BHK Apartments in Noida | Noida Lux Homes</title>
+    <meta name="description" content="🏙️ Exclusive 3BHK Apartments in Samriddhi Daksh Avenue, Sector 143B Noida. Premium amenities, strategic location, and luxury living. Book Your Dream Home Today!">
+    <meta name="keywords" content="samriddhi daksh avenue, 3bhk apartments noida, sector 143b noida, luxury apartments, noida expressway properties">
+    
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="Samriddhi Daksh Avenue | Premium 3BHK Apartments">
+    <meta property="og:description" content="Exclusive 3BHK Apartments in Prime Location Noida">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         /* Reset and Base Styles */
         * {
@@ -14,17 +24,19 @@
         }
 
         :root {
-            --primary: #2c5530;
-            --secondary: #d4af37;
+            --primary: #1a5276;
+            --secondary: #e67e22;
             --accent: #f8f9fa;
-            --text: #333;
-            --light: #fff;
-            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --text: #2c3e50;
+            --light: #ffffff;
+            --dark: #34495e;
+            --shadow: 0 4px 12px rgba(0,0,0,0.15);
+            --gradient: linear-gradient(135deg, #1a5276 0%, #2980b9 100%);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
             color: var(--text);
             overflow-x: hidden;
         }
@@ -37,6 +49,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: all 0.3s ease;
         }
 
         .nav-container {
@@ -46,13 +59,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 70px;
+            height: 80px;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 700;
             color: var(--primary);
+            text-decoration: none;
         }
 
         .logo span {
@@ -62,18 +76,50 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         .nav-menu a {
             text-decoration: none;
             color: var(--text);
             font-weight: 500;
+            font-size: 1rem;
             transition: color 0.3s;
+            position: relative;
         }
 
         .nav-menu a:hover {
             color: var(--secondary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .cta-nav {
+            background: var(--secondary);
+            color: var(--light);
+            padding: 10px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-nav:hover {
+            background: #d35400;
+            transform: translateY(-2px);
         }
 
         .mobile-toggle {
@@ -82,186 +128,127 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--primary);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, #4a7c59 100%);
+            background: var(--gradient);
             color: var(--light);
-            padding: 120px 20px 80px;
-            text-align: center;
+            padding: 160px 20px 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" opacity="0.1"><polygon points="0,800 1200,400 1200,800" fill="white"/></svg>');
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            backdrop-filter: blur(10px);
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
             animation: fadeInUp 1s ease;
         }
 
-        .hero p {
-            font-size: 1.2rem;
+        .hero-subtitle {
+            font-size: 1.4rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            opacity: 0.95;
             animation: fadeInUp 1s ease 0.2s both;
         }
 
-        .cta-button {
-            display: inline-block;
-            background: var(--secondary);
-            color: var(--light);
-            padding: 12px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
             animation: fadeInUp 1s ease 0.4s both;
         }
 
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-        }
-
-        /* Sections */
-        section {
-            padding: 80px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .section-title p {
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Services Grid */
-        .services-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: var(--light);
-            border-radius: 10px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--secondary);
-            margin-bottom: 1rem;
-        }
-
-        /* Properties Grid */
-        .properties-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .property-card {
-            background: var(--light);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s;
-        }
-
-        .property-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .property-image {
-            width: 100%;
-            height: 200px;
-            background: #ddd;
+        .hero-feature {
             display: flex;
             align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
             justify-content: center;
-            color: #666;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
         }
 
-        .property-info {
-            padding: 1.5rem;
-        }
-
-        .property-price {
-            color: var(--secondary);
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Contact Form */
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--light);
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            height: 120px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--primary);
+        .cta-primary {
+            background: var(--secondary);
             color: var(--light);
-            padding: 40px 20px;
+            padding: 15px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
         }
 
-        .footer-content {
+        .cta-primary:hover {
+            background: #d35400;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(230, 126, 34, 0.3);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--light);
+            padding: 15px 35px;
+            border: 2px solid var(--light);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .cta-secondary:hover {
+            background: var(--light);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Project Highlights */
+        .highlights {
+            padding: 80px 20px;
+            background: var(--accent);
+        }
+
+        .highlights-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
@@ -269,14 +256,217 @@
             gap: 2rem;
         }
 
-        .footer-section h3 {
+        .highlight-card {
+            background: var(--light);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .highlight-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
+        }
+
+        .highlight-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Project Details */
+        .project-details {
+            padding: 80px 20px;
+            background: var(--light);
+        }
+
+        .details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .details-content h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .details-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .details-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .details-list li::before {
+            content: '✓';
             color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .spec-item {
+            background: var(--accent);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .spec-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .spec-label {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Amenities */
+        .amenities {
+            padding: 80px 20px;
+            background: var(--accent);
+        }
+
+        .amenities-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .amenity-card {
+            background: var(--light);
+            padding: 2rem 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+        }
+
+        .amenity-card:hover {
+            transform: translateY(-5px);
+            background: var(--primary);
+            color: var(--light);
+        }
+
+        .amenity-card:hover .amenity-icon {
+            color: var(--secondary);
+        }
+
+        .amenity-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        /* Location */
+        .location {
+            padding: 80px 20px;
+            background: var(--light);
+        }
+
+        .location-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .location-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .connectivity-list {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .connectivity-list li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient);
+            color: var(--light);
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
         }
 
         .footer-bottom {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.1);
         }
@@ -285,7 +475,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(40px);
             }
             to {
                 opacity: 1;
@@ -294,6 +484,18 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 968px) {
+            .details-grid,
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
@@ -303,8 +505,9 @@
                 width: 100%;
                 background: var(--light);
                 flex-direction: column;
-                padding: 1rem;
+                padding: 2rem;
                 box-shadow: var(--shadow);
+                text-align: center;
             }
 
             .nav-menu.active {
@@ -315,31 +518,40 @@
                 display: block;
             }
 
+            .hero {
+                padding: 140px 20px 80px;
+            }
+
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.3rem;
             }
 
-            section {
-                padding: 60px 20px;
+            .hero-subtitle {
+                font-size: 1.2rem;
             }
 
-            .contact-container {
-                padding: 2rem;
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .section-title h2 {
                 font-size: 2rem;
             }
-
-            .services-grid,
-            .properties-grid {
-                grid-template-columns: 1fr;
+            
+            .hero-features {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .details-content h2 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -348,130 +560,190 @@
     <!-- Header -->
     <header>
         <nav class="nav-container">
-            <div class="logo">Noida<span>Lux</span>Homes</div>
+            <a href="#" class="logo">Noida<span>Lux</span>Homes</a>
             <button class="mobile-toggle">☰</button>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#properties">Properties</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#location">Location</a></li>
+                <li><a href="#specifications">Specifications</a></li>
+                <li><a href="#contact" class="cta-nav">Book Site Visit</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
-            <h1>Discover Your Dream Home in Noida</h1>
-            <p>Premium residential and commercial properties with luxury amenities and prime locations</p>
-            <a href="#properties" class="cta-button">Explore Properties</a>
-        </div>
-    </section>
+            <div class="hero-badge">🏙️ Premium Residential Project</div>
+            <h1>Samriddhi Daksh Avenue</h1>
+            <div class="hero-subtitle">Luxury 3BHK Apartments in Sector 143B, Noida Expressway</div>
+            
+            <div class="hero-features">
+                <div class="hero-feature">🏠 3BHK Luxury Apartments</div>
+                <div class="hero-feature">📍 Sector 143B, Noida</div>
+                <div class="hero-feature">💰 Starting at ₹1.2 Cr*</div>
+                <div class="hero-feature">📏 1650 - 1850 Sq.Ft.</div>
+            </div>
 
-    <!-- Services Section -->
-    <section id="services">
-        <div class="section-title">
-            <h2>Our Services</h2>
-            <p>Comprehensive real estate solutions for all your needs</p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🏠</div>
-                <h3>Residential Sales</h3>
-                <p>Luxury apartments, villas, and plots in prime Noida locations</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🏢</div>
-                <h3>Commercial Properties</h3>
-                <p>Office spaces, retail shops, and commercial complexes</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">💰</div>
-                <h3>Property Investment</h3>
-                <p>Strategic investment opportunities with high returns</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">⚖️</div>
-                <h3>Legal Assistance</h3>
-                <p>Complete legal support and documentation services</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="cta-primary">📞 Book Exclusive Site Visit</a>
+                <a href="#brochure" class="cta-secondary">📥 Download Brochure</a>
             </div>
         </div>
     </section>
 
-    <!-- Properties Section -->
-    <section id="properties" style="background: var(--accent);">
-        <div class="section-title">
-            <h2>Featured Properties</h2>
-            <p>Handpicked selection of premium properties</p>
+    <!-- Project Highlights -->
+    <section class="highlights">
+        <div class="highlights-grid">
+            <div class="highlight-card">
+                <div class="highlight-icon">🏗️</div>
+                <h3>Premium Construction</h3>
+                <p>Quality construction with premium materials and finishes</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🌳</div>
+                <h3>Green Surroundings</h3>
+                <p>70% open area with lush green landscapes</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🛣️</div>
+                <h3>Expressway Connectivity</h3>
+                <p>Direct access to Noida-Greater Noida Expressway</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">🏪</div>
+                <h3>Ready Infrastructure</h3>
+                <p>Complete social infrastructure in vicinity</p>
+            </div>
         </div>
-        <div class="properties-grid">
-            <div class="property-card">
-                <div class="property-image">Luxury Apartment Image</div>
-                <div class="property-info">
-                    <div class="property-price">₹2.5 Cr</div>
-                    <h3>Luxury 3BHK Apartment</h3>
-                    <p>Sector 74, Noida</p>
-                    <p>1800 sq.ft. • 3 Beds • 3 Baths</p>
+    </section>
+
+    <!-- Project Details -->
+    <section class="project-details" id="overview">
+        <div class="details-container">
+            <div class="details-grid">
+                <div class="details-content">
+                    <h2>About Samriddhi Daksh Avenue</h2>
+                    <p>Samriddhi Daksh Avenue presents exclusive 3BHK apartments in the rapidly developing Sector 143B of Noida. Strategically located on the Noida-Greater Noida Expressway, this project offers the perfect blend of luxury living and convenience.</p>
+                    
+                    <ul class="details-list">
+                        <li>Premium 3BHK apartments with modern architecture</li>
+                        <li>Spacious layouts with optimal space utilization</li>
+                        <li>High-quality construction standards</li>
+                        <li>Energy-efficient design and sustainable features</li>
+                        <li>Ample natural light and ventilation</li>
+                        <li>Modern kitchen and bathroom fittings</li>
+                    </ul>
+
+                    <div class="specs-grid">
+                        <div class="spec-item">
+                            <div class="spec-value">3 BHK</div>
+                            <div class="spec-label">Apartment Type</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">1650-1850</div>
+                            <div class="spec-label">Super Area (Sq.Ft.)</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">₹1.2 Cr*</div>
+                            <div class="spec-label">Starting Price</div>
+                        </div>
+                        <div class="spec-item">
+                            <div class="spec-value">G+14</div>
+                            <div class="spec-label">Tower Configuration</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="property-card">
-                <div class="property-image">Premium Villa Image</div>
-                <div class="property-info">
-                    <div class="property-price">₹5.8 Cr</div>
-                    <h3>Premium Villa</h3>
-                    <p>Sector 50, Noida</p>
-                    <p>3500 sq.ft. • 4 Beds • 4 Baths</p>
-                </div>
-            </div>
-            <div class="property-card">
-                <div class="property-image">Commercial Space Image</div>
-                <div class="property-info">
-                    <div class="property-price">₹1.2 Cr</div>
-                    <h3>Commercial Office Space</h3>
-                    <p>Sector 62, Noida</p>
-                    <p>1200 sq.ft. • Ready to Move</p>
+                <div class="details-visual">
+                    <!-- Project image placeholder -->
+                    <div style="background: #e0e0e0; height: 400px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 1.2rem;">
+                        Project Visualization Image
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
+    <!-- Amenities -->
+    <section class="amenities" id="amenities">
         <div class="section-title">
-            <h2>Get In Touch</h2>
-            <p>Contact us for personalized property consultation</p>
+            <h2 style="text-align: center; color: var(--primary); font-size: 2.5rem; margin-bottom: 1rem;">World-Class Amenities</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 3rem; color: #666;">Designed for modern lifestyle with premium facilities</p>
         </div>
-        <div class="contact-container">
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="interest">Property Interest</label>
-                    <select id="interest" name="interest">
-                        <option value="">Select Property Type</option>
-                        <option value="residential">Residential</option>
-                        <option value="commercial">Commercial</option>
-                        <option value="investment">Investment</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" placeholder="Tell us about your requirements..."></textarea>
-                </div>
-                <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
-            </form>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <div class="amenity-icon">🏊</div>
+                <h3>Swimming Pool</h3>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🏋️</div>
+                <h3>Fitness Center</h3>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">👶</div>
+                <h3>Children's Play Area</h3>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🌿</div>
+                <h3>Landscaped Gardens</h3>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🅿️</div>
+                <h3>Ample Parking</h3>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🎯</div>
+                <h3>Club House</h3>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🚗</div>
+                <h3>24/7 Security</h3>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">⚡</div>
+                <h3>Power Backup</h3>
+            </div>
         </div>
+    </section>
+
+    <!-- Location -->
+    <section class="location" id="location">
+        <div class="location-container">
+            <div class="location-content">
+                <div class="location-map">
+                    <!-- Map placeholder -->
+                    <div style="background: #e0e0e0; height: 400px; border-radius: 15px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 1.2rem;">
+                        Location Map - Sector 143B, Noida
+                    </div>
+                </div>
+                <div class="location-info">
+                    <h2 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 2.2rem;">Strategic Location</h2>
+                    <p style="margin-bottom: 2rem;">Sector 143B offers excellent connectivity and is surrounded by developed social infrastructure.</p>
+                    
+                    <h3 style="color: var(--secondary); margin-bottom: 1rem;">Key Distances:</h3>
+                    <ul class="connectivity-list">
+                        <li>🚗 <strong>2 mins</strong> to Noida-Greater Noida Expressway</li>
+                        <li>🏙️ <strong>10 mins</strong> to Sector 18 Metro Station</li>
+                        <li>🛍️ <strong>5 mins</strong> to GIP Mall</li>
+                        <li>🏫 <strong>8 mins</strong> to Schools & Hospitals</li>
+                        <li>✈️ <strong>30 mins</strong> to Delhi Airport</li>
+                        <li>🏢 <strong>15 mins</strong> to Corporate Parks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section" id="contact">
+        <h2>Ready to Own Your Dream Home?</h2>
+        <p>Limited apartments available. Book your exclusive site visit today!</p>
+        <div style="margin-top: 2rem;">
+            <a href="tel:+919876543210" class="cta-primary" style="margin-right: 1rem;">📞 Call Now: +91 9876543210</a>
+            <a href="https://wa.me/919876543210" class="cta-secondary">💬 WhatsApp Us</a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">*Terms & Conditions Apply</p>
     </section>
 
     <!-- Footer -->
@@ -479,24 +751,24 @@
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Noida Lux Homes</h3>
-                <p>Your trusted partner for premium real estate solutions in Noida and surrounding areas.</p>
+                <p>Your trusted real estate partner in Noida and Delhi NCR region. We bring you the best residential and commercial properties.</p>
             </div>
-            <div class="footer-section">
-                <h3>Contact Info</h3>
+            <div class="footer-section footer-contact">
+                <h3>Contact Us</h3>
                 <p>📞 +91 9876543210</p>
-                <p>✉️ info@noidaluxhomes.com</p>
-                <p>📍 Sector 62, Noida, UP 201309</p>
+                <p>✉️ sales@noidaluxhomes.com</p>
+                <p>📍 Sector 62, Noida, Uttar Pradesh 201309</p>
             </div>
             <div class="footer-section">
-                <h3>Quick Links</h3>
-                <p><a href="#home" style="color: var(--light);">Home</a></p>
-                <p><a href="#properties" style="color: var(--light);">Properties</a></p>
-                <p><a href="#services" style="color: var(--light);">Services</a></p>
-                <p><a href="#contact" style="color: var(--light);">Contact</a></p>
+                <h3>Project Details</h3>
+                <p>🏢 Samriddhi Daksh Avenue</p>
+                <p>📍 Sector 143B, Noida Expressway</p>
+                <p>🏠 3BHK Luxury Apartments</p>
+                <p>💰 Starting at ₹1.2 Crores</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Noida Lux Homes. All rights reserved.</p>
+            <p>&copy; 2024 Noida Lux Homes. All rights reserved. | <a href="#" style="color: var(--secondary);">Privacy Policy</a> | <a href="#" style="color: var(--secondary);">Terms of Service</a></p>
         </div>
     </footer>
 
@@ -522,14 +794,6 @@
             });
         });
 
-        // Contact Form Handling
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('Thank you for your inquiry! We will contact you soon.');
-            this.reset();
-        });
-
         // Sticky Header
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
@@ -540,6 +804,21 @@
                 header.style.background = 'var(--light)';
                 header.style.backdropFilter = 'none';
             }
+        });
+
+        // WhatsApp Integration
+        document.querySelector('a[href*="wa.me"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            const message = "Hi, I'm interested in Samriddhi Daksh Avenue 3BHK apartments. Please share more details.";
+            const phone = "919876543210";
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        });
+
+        // Brochure Download
+        document.querySelector('a[href="#brochure"]').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Brochure download link will be sent to your registered email/mobile number.');
+            // In real implementation, this would trigger a form or direct download
         });
     </script>
 </body>
