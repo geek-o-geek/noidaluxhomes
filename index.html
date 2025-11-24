@@ -1,207 +1,546 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Samridhi Daksh Avenue — Premium Resale Listing</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <style>
-    /* Minimal reset & typography */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background:#fbfbfb;color:#0f1724;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noida Lux Homes - Premium Real Estate Solutions</title>
+    <meta name="description" content="Discover premium residential and commercial properties in Noida. Luxury apartments, villas, and commercial spaces.">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container{
-      max-width:1200px;margin:28px auto;padding:20px;
-    }
+        :root {
+            --primary: #2c5530;
+            --secondary: #d4af37;
+            --accent: #f8f9fa;
+            --text: #333;
+            --light: #fff;
+            --shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
 
-    header{
-      display:flex;gap:12px;align-items:center;justify-content:space-between;
-      background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 30px rgba(15,23,42,0.06);
-    }
-    header .brand h1{color:#0f5132;font-size:20px;font-weight:700}
-    header .brand span{display:block;color:#6b7280;font-size:13px;margin-top:4px}
-    header .contact a{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;background:linear-gradient(90deg,#f8faf5,#eef9ef);text-decoration:none;color:#0f5132;font-weight:700;border:1px solid rgba(15,83,50,0.06)}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            overflow-x: hidden;
+        }
 
-    /* Layout */
-    .grid{display:grid;grid-template-columns:1fr 380px;gap:28px;margin-top:22px}
-    @media(max-width:980px){.grid{grid-template-columns:1fr;}}
-    .card{background:#fff;border-radius:14px;padding:18px;box-shadow:0 10px 40px rgba(2,6,23,0.06)}
+        /* Header & Navigation */
+        header {
+            background: var(--light);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
 
-    /* Hero left */
-    .badge{display:inline-block;background:#e8f7ef;color:#0f5132;padding:6px 12px;border-radius:999px;font-weight:700;font-size:13px}
-    h2{font-size:26px;margin-top:12px;color:#071024}
-    .muted{color:#6b7280;font-size:14px;margin-top:8px}
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
 
-    .main-image{width:100%;height:420px;object-fit:cover;border-radius:12px;margin-top:16px;box-shadow:0 10px 40px rgba(2,6,23,0.04)}
-    @media(max-width:600px){.main-image{height:260px}}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
 
-    .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    .pill{background:#f3faf3;color:#0b4f2b;padding:8px 12px;border-radius:999px;font-weight:600;font-size:13px}
+        .logo span {
+            color: var(--secondary);
+        }
 
-    .metrics{display:flex;gap:14px;margin-top:18px;flex-wrap:wrap}
-    .metric{background:#fff;border-radius:12px;padding:12px 14px;min-width:150px;box-shadow:0 6px 22px rgba(2,6,23,0.04)}
-    .metric .label{font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:.06em}
-    .metric .val{font-weight:700;font-size:15px;margin-top:6px}
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
 
-    .cta-row{display:flex;gap:12px;margin-top:18px;align-items:center;flex-wrap:wrap}
-    .btn{padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700;display:inline-flex;gap:8px;align-items:center}
-    .btn-call{background:#facc15;border:1px solid #eab308;color:#422006}
-    .btn-wa{background:transparent;border:1px solid #0f5132;color:#0f5132}
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-    /* Right column card */
-    .right-hero img{width:100%;border-radius:10px;margin-bottom:12px;object-fit:cover}
-    .tag{font-size:12px;color:#6b7280;font-weight:700;text-transform:uppercase;margin-bottom:6px}
+        .nav-menu a:hover {
+            color: var(--secondary);
+        }
 
-    /* Galleries */
-    .galleries{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
-    @media(max-width:980px){.galleries{grid-template-columns:1fr}}
-    .gallery{background:#ffffff;border-radius:12px;padding:12px}
-    .gallery h3{font-size:16px;margin-bottom:10px;color:#07203a}
-    .thumb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-    .thumb-grid img{width:100%;height:140px;object-fit:cover;border-radius:10px;display:block}
-    @media(max-width:480px){.thumb-grid img{height:120px}}
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
 
-    /* Floorplans full-width */
-    .floorplans{margin-top:18px;display:flex;flex-direction:column;gap:12px}
-    .floorplans img{width:100%;border-radius:10px;object-fit:contain}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #4a7c59 100%);
+            color: var(--light);
+            padding: 120px 20px 80px;
+            text-align: center;
+        }
 
-    /* Small note */
-    .note{font-size:12px;color:#6b7280;margin-top:12px}
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-    footer{margin-top:18px;text-align:center;color:#94a3b8;font-size:13px}
-  </style>
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--light);
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        /* Properties Grid */
+        .properties-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .property-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .property-image {
+            width: 100%;
+            height: 200px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .property-info {
+            padding: 1.5rem;
+        }
+
+        .property-price {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Form */
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--light);
+            padding: 40px 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--light);
+                flex-direction: column;
+                padding: 1rem;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .contact-container {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid,
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
+    <!-- Header -->
     <header>
-      <div class="brand">
-        <h1>Samridhi Daksh Avenue</h1>
-        <span>Sector 150, Noida • Premium Resale Listing</span>
-      </div>
-      <div class="contact">
-        <a href="tel:+918979333131">📞 +91 89793 33131</a>
-      </div>
+        <nav class="nav-container">
+            <div class="logo">Noida<span>Lux</span>Homes</div>
+            <button class="mobile-toggle">☰</button>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="grid">
-      <!-- LEFT MAIN -->
-      <div>
-        <div class="card">
-          <span class="badge">Premium 3 BHK •</span>
-          <h2>1980 sq ft — Luxury Apartment for Sale</h2>
-          <div class="muted">Park-facing • Low-density township • World-class amenities</div>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Discover Your Dream Home in Noida</h1>
+            <p>Premium residential and commercial properties with luxury amenities and prime locations</p>
+            <a href="#properties" class="cta-button">Explore Properties</a>
+        </div>
+    </section>
 
-          <!-- Main image (hero) -->
-          <img class="main-image" src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_01.png" alt="Samridhi Daksh Avenue — hero">
-
-          <div class="pills">
-            <div class="pill">3 BHK + Servant</div>
-            <div class="pill">1980 sq ft</div>
-            <div class="pill">High Floor • Ventilated</div>
-            <div class="pill">Sector 150, Noida</div>
-          </div>
-
-          <div class="metrics">
-            <div class="metric">
-              <div class="label">Configuration</div>
-              <div class="val">3 BHK + 4T + Servant</div>
+    <!-- Services Section -->
+    <section id="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Comprehensive real estate solutions for all your needs</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Residential Sales</h3>
+                <p>Luxury apartments, villas, and plots in prime Noida locations</p>
             </div>
-            <div class="metric">
-              <div class="label">Super Area</div>
-              <div class="val">1980 sq ft</div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>Commercial Properties</h3>
+                <p>Office spaces, retail shops, and commercial complexes</p>
             </div>
-            <div class="metric">
-              <div class="label">RERA</div>
-              <div class="val">UPRERAPRJ155408</div>
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <h3>Property Investment</h3>
+                <p>Strategic investment opportunities with high returns</p>
             </div>
-          </div>
-
-          <div class="cta-row">
-            <a class="btn btn-call" href="tel:+918979333131">📞 Call Now</a>
-            <a class="btn btn-wa" href="https://wa.me/918979333131" target="_blank" rel="noopener">💬 WhatsApp</a>
-          </div>
-
-        </div>
-
-        <!-- Galleries (separate cards) -->
-        <div class="galleries">
-          <div class="gallery">
-            <h3>Amenities & Exterior</h3>
-            <div class="thumb-grid">
-              <!-- Amenities images (use brochure pages that show amenities / exteriors) -->
-              <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_03.png" alt="Amenities 1">
-              <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_04.png" alt="Amenities 2">
-              <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_05.png" alt="Amenities 3">
-              <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_06.png" alt="Amenities 4">
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <h3>Legal Assistance</h3>
+                <p>Complete legal support and documentation services</p>
             </div>
-            <div class="note">Pool, courts, gardens, jogging tracks & large open areas.</div>
-          </div>
+        </div>
+    </section>
 
-          <div class="gallery">
-            <h3>Interiors & Lifestyle</h3>
-            <div class="thumb-grid">
-              <!-- Interiors images -->
-              <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_07.png" alt="Interior 1">
-              <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_08.png" alt="Interior 2">
-              <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_09.png" alt="Interior 3">
-              <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_10.png" alt="Interior 4">
+    <!-- Properties Section -->
+    <section id="properties" style="background: var(--accent);">
+        <div class="section-title">
+            <h2>Featured Properties</h2>
+            <p>Handpicked selection of premium properties</p>
+        </div>
+        <div class="properties-grid">
+            <div class="property-card">
+                <div class="property-image">Luxury Apartment Image</div>
+                <div class="property-info">
+                    <div class="property-price">₹2.5 Cr</div>
+                    <h3>Luxury 3BHK Apartment</h3>
+                    <p>Sector 74, Noida</p>
+                    <p>1800 sq.ft. • 3 Beds • 3 Baths</p>
+                </div>
             </div>
-            <div class="note">Clubhouse, dining, living, and bedroom impressions.</div>
-          </div>
+            <div class="property-card">
+                <div class="property-image">Premium Villa Image</div>
+                <div class="property-info">
+                    <div class="property-price">₹5.8 Cr</div>
+                    <h3>Premium Villa</h3>
+                    <p>Sector 50, Noida</p>
+                    <p>3500 sq.ft. • 4 Beds • 4 Baths</p>
+                </div>
+            </div>
+            <div class="property-card">
+                <div class="property-image">Commercial Space Image</div>
+                <div class="property-info">
+                    <div class="property-price">₹1.2 Cr</div>
+                    <h3>Commercial Office Space</h3>
+                    <p>Sector 62, Noida</p>
+                    <p>1200 sq.ft. • Ready to Move</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Floorplans (full-width stacked) -->
-        <div class="card floorplans">
-          <h3>Floor Plans</h3>
-          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_11.png" alt="Floor plan A">
-          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_12.png" alt="Floor plan B">
-          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_13.png" alt="Floor plan C">
-          <div class="note">Type A / B / C: saleable, carpet and balcony area details included in brochure. Refer to the full brochure for exact measurements.</div>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>Contact us for personalized property consultation</p>
         </div>
-
-        <!-- Location & site map -->
-        <div class="card" style="margin-top:12px;">
-          <h3>Location & Site Map</h3>
-          <div style="display:flex;gap:12px;flex-wrap:wrap">
-            <img style="width:48%;border-radius:10px" src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_14.png" alt="Location map">
-            <img style="width:48%;border-radius:10px" src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_15.png" alt="Site plan">
-          </div>
-          <div class="note">Close to Noida Expressway, upcoming film city, metro & greenfield airport.</div>
+        <div class="contact-container">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="interest">Property Interest</label>
+                    <select id="interest" name="interest">
+                        <option value="">Select Property Type</option>
+                        <option value="residential">Residential</option>
+                        <option value="commercial">Commercial</option>
+                        <option value="investment">Investment</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your requirements..."></textarea>
+                </div>
+                <button type="submit" class="cta-button" style="width: 100%;">Send Message</button>
+            </form>
         </div>
+    </section>
 
-      </div>
-
-      <!-- RIGHT COLUMN -->
-      <aside>
-        <div class="card right-hero">
-          <div class="tag">Featured Resale Unit</div>
-          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_02.png" alt="Featured unit">
-          <div style="font-weight:700;font-size:15px;margin-top:8px">Bright, well-planned layout — ideal for end-use or investment</div>
-          <div class="muted" style="margin-top:8px">Schedule site visit by appointment. Exact price & tower will be shared on enquiry.</div>
-          <div style="margin-top:12px;display:flex;gap:8px">
-            <a class="btn btn-call" href="tel:+918979333131">📞 Enquire</a>
-            <a class="btn btn-wa" href="https://wa.me/918979333131" target="_blank" rel="noopener">💬 WhatsApp</a>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:16px">
-          <!-- <div style="font-weight:700;margin-bottom:8px">Quick links</div> -->
-          <ul style="list-style:none;color:#475569;line-height:1.9;font-size:14px">
-            <li>• RERA: UPRERAPRJ155408</li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-
+    <!-- Footer -->
     <footer>
-      © Samridhi Daksh Avenue Resale Listing • Verify all details independently before purchase.
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Noida Lux Homes</h3>
+                <p>Your trusted partner for premium real estate solutions in Noida and surrounding areas.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 +91 9876543210</p>
+                <p>✉️ info@noidaluxhomes.com</p>
+                <p>📍 Sector 62, Noida, UP 201309</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <p><a href="#home" style="color: var(--light);">Home</a></p>
+                <p><a href="#properties" style="color: var(--light);">Properties</a></p>
+                <p><a href="#services" style="color: var(--light);">Services</a></p>
+                <p><a href="#contact" style="color: var(--light);">Contact</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Noida Lux Homes. All rights reserved.</p>
+        </div>
     </footer>
-  </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.mobile-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.querySelector('.nav-menu').classList.remove('active');
+                }
+            });
+        });
+
+        // Contact Form Handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add your form submission logic here
+            alert('Thank you for your inquiry! We will contact you soon.');
+            this.reset();
+        });
+
+        // Sticky Header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'var(--light)';
+                header.style.backdropFilter = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
