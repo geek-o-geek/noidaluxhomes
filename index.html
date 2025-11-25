@@ -422,7 +422,7 @@
         <a href="#overview">Overview</a>
         <a href="#amenities">Amenities</a>
         <a href="#location">Location</a>
-        <a href="#specs">Specifications</a>
+        <!-- <a href="#specs">Specifications</a> -->
         <a class="cta-btn" href="#contact">Book Site Visit</a>
       </div>
     </div>
@@ -691,13 +691,23 @@
       });
     }
 
-    // Brochure placeholder click: you can wire real download
+    // Brochure download – working link
     document.querySelectorAll('a[href="#brochure"]').forEach(el => {
       el.addEventListener('click', (e) => {
         e.preventDefault();
-        alert('Brochure download: replace the placeholder link with your hosted brochure URL (e.g., GitHub raw or Cloud storage).');
+
+        // Direct download link for your uploaded brochure
+        const brochureUrl = "https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/brochure.pdf";
+
+        const link = document.createElement("a");
+        link.href = brochureUrl;
+        link.download = "Samridhi_Daksh_Avenue_Brochure.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       });
     });
+
   </script>
 </body>
 
