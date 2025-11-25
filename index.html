@@ -1,303 +1,342 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Samridhi Daksh Avenue • 1980 sq ft Resale Flat</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-        body {
-            margin: 0;
-            background: #f8f9fb;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            color: #1e2833;
-        }
-        header {
-            background: #ffffff;
-            padding: 18px 28px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #e5e7eb;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 22px;
-            color: #14532d;
-            font-weight: 700;
-        }
-        header span {
-            font-size: 13px;
-            color: #64748b;
-        }
-        .call a {
-            font-size: 14px;
-            color: #14532d;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        main {
-            padding: 28px;
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            gap: 28px;
-            grid-template-columns: 1fr 0.8fr;
-        }
-        .badge {
-            background: #e7f7ed;
-            color: #166534;
-            padding: 6px 14px;
-            border-radius: 100px;
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        h2 {
-            margin-top: 0;
-            font-size: 30px;
-            color: #0f172a;
-        }
-        .subtitle {
-            margin-top: 10px;
-            margin-bottom: 20px;
-            color: #475569;
-            font-size: 15px;
-            line-height: 1.5;
-        }
-        .flat-img {
-            width: 100%;
-            border-radius: 14px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
-            margin-bottom: 20px;
-        }
-        .features, .metrics {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .pill {
-            padding: 7px 14px;
-            background: #ecfdf5;
-            border-radius: 100px;
-            font-size: 13px;
-            color: #14532d;
-            font-weight: 500;
-        }
-        .metric {
-            background: #ffffff;
-            padding: 12px 16px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-            min-width: 120px;
-        }
-        .metric-label {
-            font-size: 11px;
-            color: #64748b;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .metric-value {
-            margin-top: 4px;
-            font-size: 15px;
-            color: #0f172a;
-            font-weight: 700;
-        }
-        .amenities {
-            display: grid;
-            margin-top: 18px;
-            gap: 12px;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        }
-        .amenity {
-            display: flex;
-            gap: 10px;
-            font-size: 14px;
-            color: #334155;
-            align-items: center;
-        }
-        .amenity img {
-            width: 20px;
-            height: 20px;
-        }
-        .cta-box {
-            margin-top: 24px;
-            padding: 18px;
-            background: #14532d;
-            color: white;
-            border-radius: 14px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .btn-primary, .btn-outline {
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 14px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn-primary {
-            background: #facc15;
-            color: #422006;
-        }
-        .btn-outline {
-            border: 1px solid white;
-            background: transparent;
-            color: white;
-        }
-        .side-card {
-            background: white;
-            padding: 20px;
-            border-radius: 16px;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.08);
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            font-size: 12px;
-            color: #6b7280;
-        }
+  <meta charset="utf-8" />
+  <title>Samridhi Daksh Avenue | Premium 3BHK Apartments in Noida Sector 150</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Exclusive 3BHK Apartments in Samridhi Daksh Avenue, Sector 150 Noida. Premium amenities, strategic location and luxury living.">
+  <meta name="keywords" content="samridhi daksh avenue, 3bhk apartments noida, sector 150 noida, luxury apartments, noida expressway properties">
 
-        @media (max-width: 900px) {
-            main {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --primary:#0f5132;
+      --accent:#f6f7f8;
+      --gold:#d8a600;
+      --text:#17202a;
+      --muted:#6b7280;
+      --glass: rgba(255,255,255,0.6);
+      --card-shadow: 0 12px 40px rgba(2,6,23,0.06);
+      --radius:14px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; color:var(--text); background:#fbfbfb; margin:0; -webkit-font-smoothing:antialiased}
+    a{color:inherit}
+    header{position:fixed;top:0;left:0;right:0;background:#fff;box-shadow:0 6px 22px rgba(2,6,23,0.04);z-index:1200}
+    .nav-container{max-width:1200px;margin:0 auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;flex-direction:column}
+    .brand .title{font-weight:700;color:var(--primary);font-size:18px}
+    .brand .subtitle{font-size:13px;color:var(--muted)}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{font-weight:600;color:var(--muted);text-decoration:none}
+    .cta-btn{background:var(--primary);color:#fff;padding:10px 16px;border-radius:999px;text-decoration:none;font-weight:700}
+    .mobile-toggle{display:none}
+
+    /* Hero */
+    .hero{background:linear-gradient(135deg,#0f5132 0%, #163f36 100%);color:#fff;padding:120px 20px 80px;border-bottom-left-radius:40px;border-bottom-right-radius:40px;overflow:hidden}
+    .hero .wrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
+    .hero-badge{background:rgba(255,255,255,0.12);padding:8px 14px;border-radius:999px;font-weight:700;display:inline-block;margin-bottom:14px}
+    .hero h1{font-size:36px;margin:6px 0 12px;line-height:1.05}
+    .hero p.lead{font-size:16px;color:rgba(255,255,255,0.95);margin-bottom:18px}
+    .features{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+    .feature{background:rgba(255,255,255,0.06);padding:8px 12px;border-radius:999px;font-weight:600}
+
+    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-primary{background:var(--gold);color:#2b2300;padding:12px 18px;border-radius:10px;font-weight:800;text-decoration:none}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.18);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+
+    /* main layout */
+    .container{max-width:1200px;margin:26px auto;padding:0 20px}
+    .main-grid{display:grid;grid-template-columns:1fr 360px;gap:28px}
+    @media(max-width:980px){.hero .wrap{grid-template-columns:1fr} .main-grid{grid-template-columns:1fr} .hero{padding:100px 20px 60px}}
+    @media(max-width:600px){.brand .title{font-size:16px} .hero h1{font-size:26px}}
+
+    /* left card */
+    .card{background:#fff;border-radius:var(--radius);box-shadow:var(--card-shadow);padding:18px}
+    .badge{display:inline-block;background:#eaf6ee;color:var(--primary);padding:6px 12px;border-radius:999px;font-weight:700}
+    .hero-image{width:100%;height:420px;object-fit:cover;border-radius:12px;margin-top:14px}
+    @media(max-width:600px){.hero-image{height:220px}}
+
+    .pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .pill{background:#f3faf3;color:var(--primary);padding:8px 12px;border-radius:999px;font-weight:700}
+
+    .metrics{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
+    .metric{background:#fff;border-radius:12px;padding:12px 14px;min-width:140px;box-shadow:0 8px 30px rgba(2,6,23,0.04)}
+    .metric .label{font-size:12px;color:var(--muted);text-transform:uppercase}
+    .metric .val{font-weight:800;font-size:16px;color:var(--primary);margin-top:6px}
+
+    /* galleries */
+    .galleries{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+    @media(max-width:760px){.galleries{grid-template-columns:1fr}}
+    .gallery h3{margin-bottom:10px;color:var(--primary)}
+    .thumb-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+    .thumb-grid img{width:100%;height:140px;object-fit:cover;border-radius:10px}
+    .floorplans img{width:100%;height:auto;border-radius:10px;display:block;margin-top:10px}
+
+    /* right column */
+    .right .tag{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase;margin-bottom:8px}
+    .right .image{width:100%;height:220px;object-fit:cover;border-radius:10px;margin-bottom:12px}
+
+    /* location & distances */
+    .connectivity-list{list-style:none;padding:0;margin:12px 0}
+    .connectivity-list li{padding:8px 0;border-bottom:1px solid #f1f1f1;display:flex;align-items:center;gap:12px;color:var(--muted)}
+
+    /* CTA section */
+    .cta-section{background:linear-gradient(135deg,#0f5132 0%, #163f36 100%);color:#fff;padding:48px;border-radius:12px;margin-top:22px;text-align:center}
+    .cta-section a{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:800}
+    .cta-section .call{background:var(--gold);color:#2b2300;margin-right:10px}
+
+    footer{margin-top:26px;background:#0f2b22;color:#fff;padding:28px;border-radius:10px}
+    footer a{color:var(--gold);text-decoration:none;font-weight:700}
+
+    /* small */
+    .muted{color:var(--muted)}
+  </style>
 </head>
-
 <body>
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="brand">
+        <div class="title">Noida<span style="color:var(--gold)">Lux</span>Homes</div>
+        <div class="subtitle">Samridhi Daksh Avenue — Sector 150, Noida</div>
+      </div>
 
-<header>
-    <div>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#location">Location</a>
+        <a href="#specs">Specifications</a>
+        <a class="cta-btn" href="#contact">Book Site Visit</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Project hero">
+    <div class="wrap">
+      <div>
+        <div class="hero-badge">🏙 Premium Residential Project</div>
         <h1>Samridhi Daksh Avenue</h1>
-        <span>Sector 150, Noida • Premium Resale Listing</span>
-    </div>
-    <div class="call">
-        <a href="tel:+918979333131">📞 +91 89793 33131</a>
-    </div>
-</header>
-
-<main>
-
-    <section>
-        <span class="badge">1980 sq ft • Ready-to-move • 3 BHK + Servant</span>
-
-        <h2>Luxury 3 BHK Apartment for Resale</h2>
-
-        <!-- MAIN IMAGE PLACEHOLDER -->
-        <img class="flat-img"
-        src="https://raw.githubusercontent.com/geek-o-geek/noidaluxhomes/main/mnt/data/brochure_images/01.jpg"
-        alt="Samridhi Daksh Avenue Main Image" />
-
-        <p class="subtitle">
-            Spacious layout, premium construction, large balconies, green-facing view & top-class amenities in
-            Noida’s most luxurious low-density sector.
-        </p>
+        <p class="lead">Luxury 3BHK apartments set in the green sector of Noida — Sector 150. Ready-to-move premium resale units with world-class amenities and excellent expressway connectivity.</p>
 
         <div class="features">
-            <div class="pill">1980 sq ft</div>
-            <div class="pill">High Floor</div>
-            <div class="pill">Servant Room Included</div>
-            <div class="pill">Sector 150 Greenbelt Zone</div>
+          <div class="feature">🏠 3BHK + Servant</div>
+          <div class="feature">📍 Sector 150, Noida</div>
+          <div class="feature">📐 1980 sq ft (Super Area)</div>
+          <div class="feature">🏢 Low-density • Park-facing</div>
         </div>
 
-        <div class="metrics" style="margin-top:20px;">
-            <div class="metric">
-                <div class="metric-label">Configuration</div>
-                <div class="metric-value">3 BHK + 4T + Servant</div>
-            </div>
-            <div class="metric">
-                <div class="metric-label">Super Area</div>
-                <div class="metric-value">1980 sq ft</div>
-            </div>
-            <div class="metric">
-                <div class="metric-label">Location</div>
-                <div class="metric-value">Sector 150, Noida</div>
-            </div>
+        <div class="hero-ctas">
+          <a class="btn-primary" href="tel:+918979333131">📞 Book Site Visit — 8979333131</a>
+          <a class="btn-ghost" href="#brochure">📥 Download Brochure</a>
         </div>
+      </div>
 
-        <h3 style="margin-top:20px;">Project Amenities</h3>
+      <!-- Hero visual (placeholder) -->
+      <div>
+        <!-- Replace the src below with your hosted optimized hero image URL -->
+        <img class="hero-image" src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_01.png" alt="Samridhi Daksh Avenue — Hero Visual">
+      </div>
+    </div>
+  </section>
 
-        <div class="amenities">
-
-            <div class="amenity">
-                <img src="https://raw.githubusercontent.com/geek-o-geek/noidaluxhomes/main/mnt/data/brochure_images/02.jpg" />
-                Swimming Pool & Clubhouse
-            </div>
-
-            <div class="amenity">
-                <img src="https://raw.githubusercontent.com/geek-o-geek/noidaluxhomes/main/mnt/data/brochure_images/03.jpg" />
-                Fully Equipped Gym
-            </div>
-
-            <div class="amenity">
-                <img src="https://raw.githubusercontent.com/geek-o-geek/noidaluxhomes/main/mnt/data/brochure_images/04.jpg" />
-                Green Park & Kids Play Area
-            </div>
-
-            <div class="amenity">
-                <img src="https://raw.githubusercontent.com/geek-o-geek/noidaluxhomes/main/mnt/data/brochure_images/05.jpg" />
-                24×7 Security
-            </div>
-
-            <div class="amenity">
-                <img src="https://raw.githubusercontent.com/geek-o-geek/noidaluxhomes/main/mnt/data/brochure_images/06.jpg" />
-                Covered Parking
-            </div>
-
-            <div class="amenity">
-                <img src="https://raw.githubusercontent.com/geek-o-geek/noidaluxhomes/main/mnt/data/brochure_images/07.jpg" />
-                Expressway Connectivity
-            </div>
-        </div>
-
-        <div class="cta-box">
+  <!-- Main container -->
+  <main class="container">
+    <div class="main-grid">
+      <!-- LEFT COLUMN -->
+      <div>
+        <div class="card" id="overview">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
             <div>
-                <strong>Interested in this flat?</strong><br>
-                <span style="font-size:13px;opacity:0.9;">Get price, layout & site visit details.</span>
+              <span class="badge">Premium 3 BHK • Ready-to-move resale</span>
+              <h2 style="margin-top:10px">1980 sq ft luxury apartment</h2>
+              <div class="muted" style="margin-top:8px">Spacious, park-facing home in a low-density luxury project with world-class amenities.</div>
             </div>
-            <div>
-                <a class="btn-primary" href="tel:+918979333131">📞 Call Now</a>
-                <a class="btn-outline" href="https://wa.me/918979333131">💬 WhatsApp</a>
+            <div style="text-align:right">
+              <div style="font-weight:800;color:var(--primary)">RERA: UPRERAPRJ155408</div>
+              <div class="muted" style="font-size:13px;margin-top:6px">Verify all details before purchase</div>
             </div>
+          </div>
+
+          <!-- Images / gallery -->
+          <div style="margin-top:14px" class="galleries">
+            <div class="gallery card">
+              <h3>Amenities & Exterior</h3>
+              <div class="thumb-grid">
+                <!-- Replace the src with your optimized hosted image URLs -->
+                <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_03.png" alt="Swimming pool and exterior">
+                <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_05.png" alt="Clubhouse & gardens">
+                <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_06.png" alt="Sports courts">
+                <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_04.png" alt="Landscape & tracks">
+              </div>
+              <p class="muted" style="margin-top:10px">Pool, courts, parks, jogging track, kids play area and more.</p>
+            </div>
+
+            <div class="gallery card">
+              <h3>Interiors & Lifestyle</h3>
+              <div class="thumb-grid">
+                <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_07.png" alt="Living room">
+                <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_08.png" alt="Dining / kitchen">
+                <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_09.png" alt="Bedroom">
+                <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_10.png" alt="Club interiors">
+              </div>
+              <p class="muted" style="margin-top:10px">Modern finishes and spacious rooms tailored for comfortable living.</p>
+            </div>
+          </div>
+
+          <!-- Floor plans -->
+          <div class="card floorplans" style="margin-top:16px">
+            <h3>Floor Plans (Type A / B / C)</h3>
+            <!-- Replace with optimized floorplan images -->
+            <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_11.png" alt="Floor plan type A">
+            <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_12.png" alt="Floor plan type B">
+            <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_13.png" alt="Floor plan type C">
+            <p class="muted" style="margin-top:10px">Saleable: 1980 sq ft (Type A shown). For precise area breakup refer to brochure.</p>
+          </div>
+
+          <!-- Location (small) -->
+          <div class="card" style="margin-top:16px" id="amenities">
+            <h3 style="color:var(--primary)">Highlights</h3>
+            <ul style="margin-top:12px;color:var(--muted);line-height:1.8">
+              <li>Low-density project with only a few towers on a large landscaped site</li>
+              <li>Park-facing units, four-side open designs, large balconies</li>
+              <li>Full clubhouse, infinity pool, sports facilities & children’s play zones</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="right">
+        <div class="card">
+          <div class="tag">Featured resale unit</div>
+          <!-- Replace with optimized image -->
+          <img class="image" src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_02.png" alt="Featured unit">
+          <div style="font-weight:800;color:var(--primary)">Bright, well-planned layout — ideal for end-use or investment</div>
+          <div class="muted" style="margin-top:8px">Schedule site visit by appointment. Exact price, floor & tower details will be shared on enquiry.</div>
+
+          <div style="display:flex;gap:8px;margin-top:12px">
+            <a class="cta-btn" href="tel:+918979333131">☎ Call: 8979333131</a>
+            <a class="cta-btn" href="mailto:arjun.sisodia8@gmail.com" style="background:#fff;color:var(--primary;border-radius:10px;padding:10px 12px;text-decoration:none;border:1px solid #e6e6e6;font-weight:700">✉ Email</a>
+          </div>
+
+          <div style="margin-top:12px;font-size:13px;color:var(--muted)">
+            <div>RERA Reg. No.: <strong>UPRERAPRJ155408</strong></div>
+            <div style="margin-top:8px">Images from brochure — verify specifications before booking.</div>
+          </div>
         </div>
 
+        <div class="card" style="margin-top:14px">
+          <h3 style="color:var(--primary)">Quick Links</h3>
+          <ul style="list-style:none;padding:0;margin-top:10px;color:var(--muted);line-height:1.9">
+            <li>• <a href="#brochure">Download Brochure</a></li>
+            <li>• <a href="/mnt/data/brochure_images">Open Local Images Folder (placeholder)</a></li>
+            <li>• RERA: UPRERAPRJ155408</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Location Section with updated distances -->
+    <section class="card" style="margin-top:26px" id="location">
+      <h2 style="color:var(--primary)">Strategic Location — Sector 150, Noida</h2>
+      <div style="display:grid;grid-template-columns:1fr 420px;gap:20px;margin-top:12px">
+        <div>
+          <p class="muted">Sector 150 is part of Noida’s green corridor, offering excellent connectivity, low pollution and proximity to social & commercial infrastructure.</p>
+
+          <h3 style="margin-top:12px;color:var(--primary)">Key Distances</h3>
+          <ul class="connectivity-list">
+            <li>🛣️ <strong>2 mins</strong> — Noida–Greater Noida Expressway</li>
+            <li>🚇 <strong>7 mins</strong> — Sector 148 Metro Station</li>
+            <li>🏙️ <strong>12–15 mins</strong> — Pari Chowk, Greater Noida</li>
+            <li>🛣️ <strong>15 mins</strong> — DND Flyway (towards Delhi)</li>
+            <li>🏢 <strong>20 mins</strong> — Sector 18 / City Center, Noida</li>
+            <li>✈️ <strong>25 mins</strong> — Noida International Greenfield Airport (Jewar) — approx. travel time</li>
+            <li>🛒 <strong>5–10 mins</strong> — Schools, Hospitals, Local Markets</li>
+          </ul>
+        </div>
+
+        <div>
+          <!-- Location image placeholder -->
+          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_14.png" alt="Location map / site plan" style="width:100%;height:100%;object-fit:cover;border-radius:10px">
+        </div>
+      </div>
     </section>
 
-    <aside class="side-card">
+    <!-- CTA -->
+    <section class="cta-section" id="contact" style="margin-top:24px">
+      <h2>Ready to Visit the Property?</h2>
+      <p style="max-width:720px;margin:8px auto 18px">Limited resale inventory available. Book a site visit or request the detailed floor plan — our team will respond quickly.</p>
+      <div>
+        <a class="call" href="tel:+918979333131" style="background:var(--gold);color:#2b2300;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:800;margin-right:12px">📞 Call Now — 8979333131</a>
+        <a href="https://wa.me/918979333131" style="background:transparent;border:2px solid #fff;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:800">💬 WhatsApp</a>
+      </div>
+      <p style="margin-top:12px;font-size:13px;opacity:0.9">RERA Reg. No.: UPRERAPRJ155408 • Please verify all details independently before purchase.</p>
+    </section>
 
-        <h3>Property Highlights</h3>
+    <!-- Footer -->
+    <footer style="margin-top:22px">
+      <div style="display:flex;gap:28px;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;max-width:1200px;margin:0 auto">
+        <div style="max-width:420px">
+          <h3 style="color:var(--gold);margin-bottom:8px">NoidaLuxHomes</h3>
+          <p style="color:#eaf4ea">Your trusted real estate partner in Noida & Delhi NCR.</p>
+        </div>
 
-        <!-- SIDE IMAGE PLACEHOLDERS -->
-        <img class="flat-img"
-        src="https://raw.githubusercontent.com/geek-o-geek/noidaluxhomes/main/mnt/data/brochure_images/08.jpg"
-        alt="Flat Interior" />
+        <div>
+          <h4 style="color:var(--gold)">Contact</h4>
+          <p style="color:#fff;margin:6px 0">📞 8979333131</p>
+          <p style="color:#fff;margin:6px 0">✉ <a href="mailto:arjun.sisodia8@gmail.com" style="color:var(--gold)">arjun.sisodia8@gmail.com</a></p>
+          <p style="color:#fff;margin:6px 0">📍 Sector 150, Noida, Uttar Pradesh</p>
+        </div>
 
-        <img class="flat-img"
-        src="https://raw.githubusercontent.com/geek-o-geek/noidaluxhomes/main/mnt/data/brochure_images/09.jpg"
-        alt="Tower Image" />
+        <div>
+          <h4 style="color:var(--gold)">Project</h4>
+          <p style="color:#fff;margin:6px 0">Samridhi Daksh Avenue — 3BHK Luxury Apartments</p>
+          <p style="color:#fff;margin:6px 0">RERA: UPRERAPRJ155408</p>
+        </div>
+      </div>
 
-        <p style="font-size:13px;color:#475569;margin-top:10px;">
-            Exact tower, floor & pricing available on call.  
-            All images are representational.
-        </p>
+      <div style="text-align:center;margin-top:18px;color:rgba(255,255,255,0.85);font-size:13px">
+        &copy; <span id="year"></span> NoidaLuxHomes. All rights reserved. | <a href="#" style="color:var(--gold)">Privacy Policy</a>
+      </div>
+    </footer>
+  </main>
 
-    </aside>
+  <script>
+    // Small JS utilities
+    // Set year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-</main>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const href = this.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          const el = document.querySelector(href);
+          if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
+    });
 
-<footer>
-    © Samridhi Daksh Avenue Resale • Please verify all details independently before purchase.
-</footer>
+    // Mobile nav toggle (for small screens) - simple implementation
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', () => {
+        const nav = document.querySelector('.nav-links');
+        if (nav) nav.classList.toggle('active');
+      });
+    }
 
+    // Brochure placeholder click: you can wire real download
+    document.querySelectorAll('a[href="#brochure"]').forEach(el=>{
+      el.addEventListener('click', (e)=>{
+        e.preventDefault();
+        alert('Brochure download: replace the placeholder link with your hosted brochure URL (e.g., GitHub raw or Cloud storage).');
+      });
+    });
+  </script>
 </body>
 </html>
