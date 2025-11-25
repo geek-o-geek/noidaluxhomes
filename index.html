@@ -7,9 +7,11 @@
 
   <title>Samriddhi Daksh Avenue Noida Sector 150 | Luxury 3BHK 1980 Sq Ft Apartments</title>
 
-  <meta name="description" content="Premium 3BHK luxury apartments (1980 sq ft) at Samriddhi Daksh Avenue, Sector 150 Noida. Top amenities, green township, expressway connectivity. Book site visit now!">
+  <meta name="description"
+    content="Premium 3BHK luxury apartments (1980 sq ft) at Samriddhi Daksh Avenue, Sector 150 Noida. Top amenities, green township, expressway connectivity. Book site visit now!">
 
-  <meta name="keywords" content="Samriddhi Daksh Avenue, Noida Sector 150, 3BHK Noida, 3BHK 1980 sq ft, Noida luxury apartments, Noida Expressway flats, Sector 150 real estate">
+  <meta name="keywords"
+    content="Samriddhi Daksh Avenue, Noida Sector 150, 3BHK Noida, 3BHK 1980 sq ft, Noida luxury apartments, Noida Expressway flats, Sector 150 real estate">
 
   <!-- Canonical -->
   <link rel="canonical" href="https://noidaluxhomes.vercel.app/" />
@@ -424,6 +426,61 @@
     .muted {
       color: var(--muted)
     }
+
+    /* Floating Sticky Enquiry Button */
+    #floating-enquiry-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #e67e22;
+      color: #fff;
+      padding: 15px 25px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(230, 126, 34, 0.35);
+      z-index: 9999;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Hover effect (desktop) */
+    #floating-enquiry-btn:hover {
+      background: #d35400;
+      transform: translateY(-3px);
+    }
+
+    /* Pulse animation to attract leads */
+    #floating-enquiry-btn {
+      animation: pulseEnquiry 2s infinite;
+    }
+
+    @keyframes pulseEnquiry {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.06);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Mobile Optimization */
+    @media (max-width: 600px) {
+      #floating-enquiry-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
   </style>
 </head>
 <script type="application/ld+json">
@@ -712,7 +769,8 @@
           <!-- Location image placeholder -->
           <img
             src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_14.png"
-            alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Location map / site plan" style="width:100%;height:100%;object-fit:cover;border-radius:10px">
+            alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Location map / site plan"
+            style="width:100%;height:100%;object-fit:cover;border-radius:10px">
         </div>
       </div>
     </section>
@@ -733,6 +791,45 @@
       <p style="margin-top:12px;font-size:13px;opacity:0.9">RERA Reg. No.: UPRERAPRJ155408 • Please verify all details
         independently before purchase.</p>
     </section>
+
+    <section id="lead-form" style="padding: 80px 20px; background: #f4f7fb;">
+      <div
+        style="max-width: 600px; margin: auto; background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.15);">
+
+        <h2 style="text-align:center; color:#1a5276; font-size: 2.2rem; margin-bottom: 10px;">
+          Book a Free Site Visit
+        </h2>
+        <p style="text-align:center; color:#666; margin-bottom: 30px;">
+          Get floor plans, pricing & offers directly from our sales team.
+        </p>
+
+        <form id="enquiryForm">
+
+          <label>Full Name</label>
+          <input type="text" id="name" required placeholder="Your Name"
+            style="width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 15px;">
+
+          <label>Phone Number</label>
+          <input type="tel" id="phone" required placeholder="987XXXXXXX"
+            style="width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 15px;">
+
+          <label>Email (Optional)</label>
+          <input type="email" id="email" placeholder="you@example.com"
+            style="width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 20px;">
+
+          <button type="submit"
+            style="width: 100%; background:#e67e22; color:#fff; padding: 15px; border:none; border-radius: 8px; font-size: 1.2rem; cursor:pointer;">
+            Submit Inquiry
+          </button>
+        </form>
+
+        <p id="formSuccess" style="text-align:center; color:green; margin-top:20px; display:none;">
+          Thank you! Our team will contact you shortly.
+        </p>
+
+      </div>
+    </section>
+
 
     <!-- Footer -->
     <footer style="margin-top:22px">
@@ -765,6 +862,11 @@
     </footer>
   </main>
 
+  <!-- Floating Enquiry Button -->
+  <a href="#lead-form" id="floating-enquiry-btn">
+    📩 Enquire Now
+  </a>
+
   <script>
     // Small JS utilities
     // Set year in footer
@@ -794,7 +896,7 @@
     document.querySelectorAll('a[href="#brochure"]').forEach(el => {
       el.addEventListener('click', (e) => {
         e.preventDefault();
-        
+
         const url = "https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/brochure.pdf";
 
         const a = document.createElement("a");
@@ -805,6 +907,61 @@
         document.body.removeChild(a);
       });
     });
+
+    document.getElementById("enquiryForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+
+      // Basic validation
+      if (phone.length < 10) {
+        alert("Enter a valid phone number.");
+        return;
+      }
+
+      // WhatsApp Auto Message
+      const message =
+        `Hello, I am interested in Samriddhi Daksh Avenue (Sector 150 Noida).` +
+        `%0AName: ${name}` +
+        `%0APhone: ${phone}` +
+        `%0AEmail: ${email || "Not Provided"}` +
+        `%0APlease share details.`;
+
+      // Business Contact Number
+      const whatsappNumber = "918979333131";
+
+      // Open WhatsApp
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, "_blank");
+
+      // Success Message
+      document.getElementById("formSuccess").style.display = "block";
+      document.getElementById("enquiryForm").reset();
+
+      // Scroll to success text
+      document.getElementById("formSuccess").scrollIntoView({ behavior: "smooth" });
+
+      // JSON Payload (future CRM/API integration)
+      const payload = {
+        name: name,
+        phone: phone,
+        email: email,
+        project: "Samriddhi Daksh Avenue - Sector 150 Noida",
+        timestamp: new Date().toISOString()
+      };
+
+      console.log("Lead Captured:", payload);
+    });
+
+    document.querySelector('#floating-enquiry-btn').addEventListener('click', function (e) {
+      const target = document.querySelector('#lead-form');
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
   </script>
 </body>
+
 </html>
