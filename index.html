@@ -755,6 +755,37 @@
     }
   }
 
+  /* LIGHTBOX CONTAINER */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  padding: 20px;
+}
+
+.lightbox-overlay img {
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Cursor styling */
+.zoomable {
+  cursor: zoom-in;
+}
+
+
 </style>
 </head>
 
@@ -918,15 +949,19 @@
               <h3>Amenities & Exterior</h3>
               <div class="thumb-grid">
                 <img
+                  class="zoomable"
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_03.png"
                   alt="Swimming pool and exterior">
                 <img
+                  class="zoomable"
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_05.png"
                   alt="Clubhouse & gardens">
                 <img
+                  class="zoomable"
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_06.png"
                   alt="Sports courts">
                 <img
+                  class="zoomable"
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_04.jpg"
                   alt="Landscape & tracks">
               </div>
@@ -937,15 +972,19 @@
               <h3>Interiors & Lifestyle</h3>
               <div class="thumb-grid">
                 <img
+                  class="zoomable"
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_07.png"
                   alt="Living room">
                 <img
+                  class="zoomable"
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_08.png"
                   alt="Dining / kitchen">
                 <img
+                  class="zoomable"
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_09.png"
                   alt="Bedroom">
                 <img
+                  class="zoomable"
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_10.png"
                   alt="Club interiors">
               </div>
@@ -958,12 +997,15 @@
           <div class="card floorplans" style="margin-top:16px">
             <h3>Floor Plans (Type A / B / C)</h3>
             <img
+              class="zoomable"
               src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_11.jpg"
               alt="Floor plan type A">
             <img
+              class="zoomable"
               src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_12.jpg"
               alt="Floor plan type B">
             <img
+              class="zoomable"
               src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_13.png"
               alt="Floor plan type C">
             <p class="muted" style="margin-top:10px">Saleable: 1980 sq ft (Type A shown). For precise area breakup refer
@@ -986,6 +1028,7 @@
         <div class="card">
           <div class="tag">Featured resale unit</div>
           <img class="image"
+            class="zoomable"
             src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_02.png"
             alt="Featured unit">
           <div style="font-weight:800;color:var(--primary)">Bright, well-planned layout — ideal for end-use or
@@ -1105,6 +1148,7 @@
 
         <div>
           <img
+            class="zoomable"
             src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_14.jpg"
             alt="Location map / site plan" style="width:100%;height:100%;object-fit:cover;border-radius:10px">
         </div>
@@ -1269,7 +1313,7 @@
     <small>Open WhatsApp on your phone and scan this QR to start a chat with +91 89793 33131</small>
 
     <!-- LOCAL QR IMAGE path (replace with hosted path on deploy if needed) -->
-    <img src="/mnt/data/whatsapp_qr.png" alt="WhatsApp QR for +91 89793 33131" id="waQrImage" />
+    <img src="/mnt/data/whatsapp_qr.png" alt="WhatsApp QR for +91 89793 33131" id="waQrImage" class="zoomable" />
 
     <div style="display:flex;gap:10px;justify-content:center">
       <a class="wa-btn" id="waChatFromModal" href="https://wa.me/918979333131?text=Hi%2C%20I%20am%20interested%20in%20Samriddhi%20Daksh%20Avenue" target="_blank" rel="noopener noreferrer" style="text-decoration:none; padding:10px 14px; border-radius:8px;">
@@ -1444,6 +1488,28 @@
     // fire analytics event here (gtag/pixel)
   });
 </script>
+
+<script>
+  // create overlay dynamically
+  var overlay1 = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.innerHTML = '<img src="" class="zoomable" />';
+  document.body.appendChild(overlay1);
+
+  // handle zoom click
+  document.querySelectorAll('.zoomable').forEach(img => {
+    img.addEventListener('click', () => {
+      overlay.style.display = 'flex';
+      overlay.querySelector('img').src = img.src;
+    });
+  });
+
+  // close on click
+  overlay.addEventListener('click', () => {
+    overlay.style.display = 'none';
+  });
+</script>
+
 
 </body>
 
