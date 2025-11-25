@@ -141,11 +141,13 @@
     }
 
     .hero-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       background: rgba(255, 255, 255, 0.12);
       padding: 8px 14px;
       border-radius: 999px;
       font-weight: 700;
-      display: inline-block;
       margin-bottom: 14px
     }
 
@@ -169,10 +171,14 @@
     }
 
     .feature {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       background: rgba(255, 255, 255, 0.06);
       padding: 8px 12px;
       border-radius: 999px;
-      font-weight: 600
+      font-weight: 600;
+      color: #fff;
     }
 
     .hero-ctas {
@@ -182,22 +188,30 @@
     }
 
     .btn-primary {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
       background: var(--gold);
       color: #2b2300;
       padding: 12px 18px;
       border-radius: 10px;
       font-weight: 800;
-      text-decoration: none
+      text-decoration: none;
+      font-size: 16px;
     }
 
     .btn-ghost {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
       background: transparent;
       border: 1px solid rgba(255, 255, 255, 0.18);
       color: #fff;
       padding: 12px 18px;
       border-radius: 10px;
       text-decoration: none;
-      font-weight: 700
+      font-weight: 700;
+      font-size: 16px;
     }
 
     /* main layout */
@@ -241,7 +255,7 @@
     .card {
       background: #fff;
       border-radius: var(--radius);
-      box-shadow: var(--card-shadow);
+      box-shadow: 0 12px 40px var(--card-shadow);
       padding: 18px
     }
 
@@ -422,11 +436,6 @@
       font-weight: 700
     }
 
-    /* small */
-    .muted {
-      color: var(--muted)
-    }
-
     /* Floating Sticky Enquiry Button */
     #floating-enquiry-btn {
       position: fixed;
@@ -481,90 +490,23 @@
         right: 20px;
       }
     }
+
+    /* Small utility for inline icons */
+    .icon-18 {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .icon-20 {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      vertical-align: middle;
+    }
   </style>
 </head>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "RealEstateListing",
-  "name": "Samriddhi Daksh Avenue",
-  "description": "Luxury 3BHK 1980 sq ft apartments in Noida Sector 150 with top-class amenities.",
-  "url": "https://noidaluxhomes.vercel.app/",
-  "image": "YOUR_IMAGE_URL.webp",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Sector 150",
-    "addressLocality": "Noida",
-    "addressRegion": "Uttar Pradesh",
-    "postalCode": "201310",
-    "addressCountry": "IN"
-  },
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock"
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Noida Lux Homes",
-  "url": "https://noidaluxhomes.vercel.app/",
-  "telephone": "+918979333131",
-  "email": "arjun.sisodia8@gmail.com",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Sector 62",
-    "addressLocality": "Noida",
-    "addressRegion": "Uttar Pradesh",
-    "postalCode": "201309",
-    "addressCountry": "IN"
-  }
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is the size of the 3BHK apartment?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Samriddhi Daksh Avenue offers spacious 3BHK apartments with a super area of 1980 sq ft."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where is Samriddhi Daksh Avenue located?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The project is located in Sector 150, Noida — one of the greenest and fastest-developing sectors."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What amenities are provided?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Amenities include a swimming pool, clubhouse, gym, landscaped gardens, sports courts, kids play area, and 24/7 security."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Sector 150 well connected?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sector 150 has excellent connectivity to Noida Expressway, Jewar Airport, Yamuna Expressway, and key commercial hubs."
-      }
-    }
-  ]
-}
-</script>
 
 <body>
   <!-- Header -->
@@ -579,7 +521,6 @@
         <a href="#overview">Overview</a>
         <a href="#amenities">Amenities</a>
         <a href="#location">Location</a>
-        <!-- <a href="#specs">Specifications</a> -->
         <a class="cta-btn" href="#contact">Book Site Visit</a>
       </div>
     </div>
@@ -589,21 +530,90 @@
   <section class="hero" aria-label="Project hero">
     <div class="wrap">
       <div>
-        <div class="hero-badge">🏙 Premium Residential Project</div>
-        <h1>Samridhi Daksh Avenue</h1>
+        <div class="hero-badge" aria-hidden="true">
+          <!-- building-2 (icon for project) - 18px -->
+          <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 21V8a1 1 0 0 1 1-1h3v14H3z"></path>
+            <path d="M13 21V4h6a1 1 0 0 1 1 1v15h-7z"></path>
+            <path d="M7 7h.01"></path>
+            <path d="M11 7h.01"></path>
+            <path d="M15 7h.01"></path>
+            <path d="M15 11h.01"></path>
+            <path d="M11 11h.01"></path>
+          </svg>
+          <span>Premium Residential Project</span>
+        </div>
+
+        <h1>Samriddhi Daksh Avenue</h1>
         <p class="lead">Luxury 3BHK apartments set in the green sector of Noida — Sector 150. Ready-to-move premium
           resale units with world-class amenities and excellent expressway connectivity.</p>
 
         <div class="features">
-          <div class="feature">🏠 3BHK + Servant</div>
-          <div class="feature">📍 Sector 150, Noida</div>
-          <div class="feature">📐 1980 sq ft (Super Area)</div>
-          <div class="feature">🏢 Low-density • Park-facing</div>
+          <div class="feature" aria-hidden="false">
+            <!-- home (18px) -->
+            <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 9.5L12 3l9 6.5"></path>
+              <path d="M9 22V12h6v10"></path>
+            </svg>
+            <span>3BHK + Servant</span>
+          </div>
+
+          <div class="feature">
+            <!-- map-pin (18px) -->
+            <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Sector 150, Noida</span>
+          </div>
+
+          <div class="feature">
+            <!-- ruler (18px) -->
+            <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="6" rx="1"></rect>
+              <path d="M7 11v6"></path>
+              <path d="M11 11v6"></path>
+              <path d="M15 11v6"></path>
+              <path d="M19 11v6"></path>
+            </svg>
+            <span>1980 sq ft (Super Area)</span>
+          </div>
+
+          <div class="feature">
+            <!-- buildings (18px) -->
+            <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 21V8a1 1 0 0 1 1-1h3v14H3z"></path>
+              <path d="M13 21V4h6a1 1 0 0 1 1 1v16h-7z"></path>
+            </svg>
+            <span>Low-density • Park-facing</span>
+          </div>
         </div>
 
         <div class="hero-ctas">
-          <a class="btn-primary" href="tel:+918979333131">📞 Book Site Visit — 8979333131</a>
-          <a class="btn-ghost" href="#brochure">📥 Download Brochure</a>
+          <a class="btn-primary" href="tel:+918979333131" aria-label="Call 8979333131">
+            <!-- phone (20px) -->
+            <svg class="icon-20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.95.39 1.88.78 2.77a2 2 0 0 1-.45 2.11L9.91 10.91a16 16 0 0 0 6 6l1.31-1.31a2 2 0 0 1 2.11-.45c.89.39 1.82.66 2.77.78A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            Book Site Visit — 8979333131
+          </a>
+
+          <a class="btn-ghost" href="#brochure" id="downloadBrochureBtn" aria-label="Download brochure">
+            <!-- download (20px) -->
+            <svg class="icon-20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            Download Brochure
+          </a>
         </div>
       </div>
 
@@ -618,7 +628,7 @@
   </section>
 
   <!-- Main container -->
-  <main class="container">
+  <main class="container" style="margin-top:28px;">
     <div class="main-grid">
       <!-- LEFT COLUMN -->
       <div>
@@ -644,16 +654,16 @@
                 <!-- Replace the src with your optimized hosted image URLs -->
                 <img
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_03.png"
-                  alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Swimming pool and exterior">
+                  alt="Samriddhi Daksh Avenue — Swimming pool and exterior">
                 <img
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_05.png"
-                  alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Clubhouse & gardens">
+                  alt="Samriddhi Daksh Avenue — Clubhouse & gardens">
                 <img
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_06.png"
-                  alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Sports courts">
+                  alt="Samriddhi Daksh Avenue — Sports courts">
                 <img
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_04.png"
-                  alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Landscape & tracks">
+                  alt="Samriddhi Daksh Avenue — Landscape & tracks">
               </div>
               <p class="muted" style="margin-top:10px">Pool, courts, parks, jogging track, kids play area and more.</p>
             </div>
@@ -663,16 +673,16 @@
               <div class="thumb-grid">
                 <img
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_07.png"
-                  alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Living room">
+                  alt="Samriddhi Daksh Avenue — Living room">
                 <img
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_08.png"
-                  alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Dining / kitchen">
+                  alt="Samriddhi Daksh Avenue — Dining / kitchen">
                 <img
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_09.png"
-                  alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Bedroom">
+                  alt="Samriddhi Daksh Avenue — Bedroom">
                 <img
                   src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_10.png"
-                  alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Club interiors">
+                  alt="Samriddhi Daksh Avenue — Club interiors">
               </div>
               <p class="muted" style="margin-top:10px">Modern finishes and spacious rooms tailored for comfortable
                 living.</p>
@@ -685,13 +695,13 @@
             <!-- Replace with optimized floorplan images -->
             <img
               src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_11.png"
-              alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Floor plan type A">
+              alt="Floor plan type A">
             <img
               src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_12.png"
-              alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Floor plan type B">
+              alt="Floor plan type B">
             <img
               src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_13.png"
-              alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Floor plan type C">
+              alt="Floor plan type C">
             <p class="muted" style="margin-top:10px">Saleable: 1980 sq ft (Type A shown). For precise area breakup refer
               to brochure.</p>
           </div>
@@ -715,17 +725,32 @@
           <!-- Replace with optimized image -->
           <img class="image"
             src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_02.png"
-            alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Featured unit">
+            alt="Featured unit">
           <div style="font-weight:800;color:var(--primary)">Bright, well-planned layout — ideal for end-use or
             investment</div>
           <div class="muted" style="margin-top:8px">Schedule site visit by appointment. Exact price, floor & tower
             details will be shared on enquiry.</div>
 
           <div style="display:flex;gap:8px;margin-top:12px">
-            <a class="cta-btn" href="tel:+918979333131">☎ Call: 8979333131</a>
-            <a class="cta-btn" href="mailto:arjun.sisodia8@gmail.com"
-              style="background:var(--accent);color:var(--primary);border-radius:10px;padding:10px 12px;text-decoration:none;border:1px solid #e6e6e6;font-weight:700">✉
-              Email</a>
+            <a class="cta-btn" href="tel:+918979333131" aria-label="Call 8979333131">
+              <!-- phone (20px) -->
+              <svg class="icon-20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.95.39 1.88.78 2.77a2 2 0 0 1-.45 2.11L9.91 10.91a16 16 0 0 0 6 6l1.31-1.31a2 2 0 0 1 2.11-.45c.89.39 1.82.66 2.77.78A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              Call: 8979333131
+            </a>
+
+            <a class="cta-btn" href="mailto:arjun.sisodia8@gmail.com" aria-label="Email arjun.sisodia8@gmail.com"
+              style="background:var(--accent);color:var(--primary);border-radius:10px;padding:10px 12px;text-decoration:none;border:1px solid #e6e6e6;font-weight:700;display:inline-flex;align-items:center;gap:8px">
+              <!-- mail (20px) -->
+              <svg class="icon-20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8"></path>
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+              </svg>
+              Email
+            </a>
           </div>
 
           <div style="margin-top:12px;font-size:13px;color:var(--muted)">
@@ -753,13 +778,83 @@
 
           <h3 style="margin-top:12px;color:var(--primary)">Key Distances</h3>
           <ul class="connectivity-list">
-            <li>🛣️ <strong>2 mins</strong> — Noida–Greater Noida Expressway</li>
-            <li>🚇 <strong>7 mins</strong> — Sector 148 Metro Station</li>
-            <li>🏙️ <strong>12–15 mins</strong> — Pari Chowk, Greater Noida</li>
-            <li>🛣️ <strong>15 mins</strong> — DND Flyway (towards Delhi)</li>
-            <li>🏢 <strong>20 mins</strong> — Sector 18 / City Center, Noida</li>
-            <li>✈️ <strong>25 mins</strong> — Noida International Greenfield Airport (Jewar) — approx. travel time</li>
-            <li>🛒 <strong>5–10 mins</strong> — Schools, Hospitals, Local Markets</li>
+            <li>
+              <!-- road (18px) -->
+              <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 2h18"></path>
+                <path d="M12 2v20"></path>
+                <path d="M7 6h10"></path>
+                <path d="M7 12h10"></path>
+                <path d="M7 18h10"></path>
+              </svg>
+              <strong>2 mins</strong> — Noida–Greater Noida Expressway
+            </li>
+
+            <li>
+              <!-- train (18px) -->
+              <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="13" rx="2"></rect>
+                <path d="M7 21l3-3h4l3 3"></path>
+                <path d="M8 7h8"></path>
+              </svg>
+              <strong>7 mins</strong> — Sector 148 Metro Station
+            </li>
+
+            <li>
+              <!-- building-2 (18px) -->
+              <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 21V8a1 1 0 0 1 1-1h3v14H3z"></path>
+                <path d="M13 21V4h6a1 1 0 0 1 1 1v16h-7z"></path>
+              </svg>
+              <strong>12–15 mins</strong> — Pari Chowk, Greater Noida
+            </li>
+
+            <li>
+              <!-- road (18px) -->
+              <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 2h18"></path>
+                <path d="M12 2v20"></path>
+                <path d="M7 6h10"></path>
+                <path d="M7 12h10"></path>
+                <path d="M7 18h10"></path>
+              </svg>
+              <strong>15 mins</strong> — DND Flyway (towards Delhi)
+            </li>
+
+            <li>
+              <!-- building-2 (18px) -->
+              <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 21V8a1 1 0 0 1 1-1h3v14H3z"></path>
+                <path d="M13 21V4h6a1 1 0 0 1 1 1v16h-7z"></path>
+              </svg>
+              <strong>20 mins</strong> — Sector 18 / City Center, Noida
+            </li>
+
+            <li>
+              <!-- plane (18px) -->
+              <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M2 16h8l2-8 6 8h6"></path>
+                <path d="M3 21l4-1"></path>
+              </svg>
+              <strong>25 mins</strong> — Noida International Greenfield Airport (Jewar) — approx. travel time
+            </li>
+
+            <li>
+              <!-- shopping-cart (18px) -->
+              <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 6h15l-1.5 9h-11z"></path>
+                <circle cx="9" cy="20" r="1"></circle>
+                <circle cx="19" cy="20" r="1"></circle>
+              </svg>
+              <strong>5–10 mins</strong> — Schools, Hospitals, Local Markets
+            </li>
           </ul>
         </div>
 
@@ -767,8 +862,7 @@
           <!-- Location image placeholder -->
           <img
             src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_14.png"
-            alt="Samriddhi Daksh Avenue 3BHK Apartment Noida Sector 150 — Location map / site plan"
-            style="width:100%;height:100%;object-fit:cover;border-radius:10px">
+            alt="Location map / site plan" style="width:100%;height:100%;object-fit:cover;border-radius:10px">
         </div>
       </div>
     </section>
@@ -780,25 +874,38 @@
         the detailed floor plan — our team will respond quickly.</p>
       <div>
         <a class="call" href="tel:+918979333131"
-          style="background:var(--gold);color:#2b2300;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:800;margin-right:12px">📞
-          Call Now — 8979333131</a>
+          style="background:var(--gold);color:#2b2300;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:800;margin-right:12px;display:inline-flex;align-items:center;gap:10px">
+          <!-- phone (20px) -->
+          <svg class="icon-20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.95.39 1.88.78 2.77a2 2 0 0 1-.45 2.11L9.91 10.91a16 16 0 0 0 6 6l1.31-1.31a2 2 0 0 1 2.11-.45c.89.39 1.82.66 2.77.78A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          Call Now — 8979333131
+        </a>
+
         <a href="https://wa.me/918979333131"
-          style="background:transparent;border:2px solid #fff;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:800">💬
-          WhatsApp</a>
+          style="background:transparent;border:2px solid #fff;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:800;display:inline-flex;align-items:center;gap:10px">
+          <!-- message-circle (20px) -->
+          <svg class="icon-20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          WhatsApp
+        </a>
       </div>
       <p style="margin-top:12px;font-size:13px;opacity:0.9">RERA Reg. No.: UPRERAPRJ155408 • Please verify all details
         independently before purchase.</p>
     </section>
 
-    <section id="lead-form" style="padding: 80px 20px; background: #eef1f5;">
+    <section id="lead-form" style="padding: 80px 20px; background: #eef1f5; margin-top:22px;">
       <div
         style="max-width: 600px; margin: auto; background: #fff; padding: 40px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.15);">
 
-        <h2 style="text-align:center; color:#2980b9; font-size: 2.2rem; margin-bottom: 10px;">
+        <h2 style="text-align:center; color:var(--primary); font-size: 2.2rem; margin-bottom: 10px;">
           Book a Free Site Visit
         </h2>
         <p style="text-align:center; color:#666; margin-bottom: 30px;">
-          Get floor plans, pricing & offers directly from our sales team.
+          Get floor plans & visit slots directly from our sales team.
         </p>
 
         <form id="enquiryForm">
@@ -816,7 +923,13 @@
             style="width: 100%; padding: 14px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 20px;">
 
           <button type="submit"
-            style="width: 100%; background:#e67e22; color:#fff; padding: 15px; border:none; border-radius: 8px; font-size: 1.2rem; cursor:pointer;">
+            style="width: 100%; background:#e67e22; color:#fff; padding: 15px; border:none; border-radius: 8px; font-size: 1.2rem; cursor:pointer; display:inline-flex;align-items:center;gap:10px;justify-content:center">
+            <!-- mail (20px) -->
+            <svg class="icon-20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8"></path>
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            </svg>
             Submit Inquiry
           </button>
         </form>
@@ -840,37 +953,77 @@
 
         <div>
           <h4 style="color:var(--gold)">Contact</h4>
-          <p style="color:#fff;margin:6px 0">📞 8979333131</p>
-          <p style="color:#fff;margin:6px 0">✉ <a href="mailto:arjun.sisodia8@gmail.com"
-              style="color:var(--gold)">arjun.sisodia8@gmail.com</a></p>
-          <p style="color:#fff;margin:6px 0">📍 Sector 150, Noida, Uttar Pradesh</p>
+          <p style="color:#fff;margin:6px 0">
+            <!-- phone icon (18px) -->
+            <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.86 19.86 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.95.39 1.88.78 2.77a2 2 0 0 1-.45 2.11L9.91 10.91a16 16 0 0 0 6 6l1.31-1.31a2 2 0 0 1 2.11-.45c.89.39 1.82.66 2.77.78A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+            8979333131
+          </p>
+          <p style="color:#fff;margin:6px 0">
+            <!-- mail icon (18px) -->
+            <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8"></path>
+              <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+            </svg>
+            <a href="mailto:arjun.sisodia8@gmail.com" style="color:var(--gold)">arjun.sisodia8@gmail.com</a>
+          </p>
+          <p style="color:#fff;margin:6px 0">
+            <!-- map-pin (18px) -->
+            <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 0 1 18 0z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            Sector 150, Noida, Uttar Pradesh
+          </p>
         </div>
 
         <div>
           <h4 style="color:var(--gold)">Project</h4>
-          <p style="color:#fff;margin:6px 0">Samridhi Daksh Avenue — 3BHK Luxury Apartments</p>
+          <p style="color:#fff;margin:6px 0">Samriddhi Daksh Avenue — 3BHK Luxury Apartments</p>
           <p style="color:#fff;margin:6px 0">RERA: UPRERAPRJ155408</p>
         </div>
       </div>
 
       <div style="text-align:center;margin-top:18px;color:rgba(255,255,255,0.85);font-size:13px">
-        &copy; <span id="year"></span> NoidaLuxHomes. All rights reserved. | <a href="#"
-          style="color:var(--gold)">Privacy Policy</a>
+        &copy; <span id="year"></span> NoidaLuxHomes. All rights reserved. | <a href="#" style="color:var(--gold)">Privacy
+          Policy</a>
       </div>
     </footer>
   </main>
 
   <!-- Floating Enquiry Button -->
-  <a href="#lead-form" id="floating-enquiry-btn">
-    📩 Enquire Now
+  <a href="#lead-form" id="floating-enquiry-btn" aria-label="Enquire Now">
+    <!-- mail icon (20px) -->
+    <svg class="icon-20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8"></path>
+      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+    </svg>
+    Enquire Now
   </a>
 
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What is the size of the 3BHK apartment?","acceptedAnswer":{"@type":"Answer","text":"Samriddhi Daksh Avenue offers spacious 3BHK apartments with a super area of 1980 sq ft."}},
+      {"@type":"Question","name":"Where is Samriddhi Daksh Avenue located?","acceptedAnswer":{"@type":"Answer","text":"The project is located in Sector 150, Noida — one of the greenest and fastest-developing sectors."}},
+      {"@type":"Question","name":"What amenities are provided?","acceptedAnswer":{"@type":"Answer","text":"Amenities include a swimming pool, clubhouse, gym, landscaped gardens, sports courts, kids play area, and 24/7 security."}},
+      {"@type":"Question","name":"Is Sector 150 well connected?","acceptedAnswer":{"@type":"Answer","text":"Sector 150 has excellent connectivity to Noida Expressway, Jewar Airport, Yamuna Expressway, and key commercial hubs."}}
+    ]
+  }
+  </script>
+
   <script>
-    // Small JS utilities
     // Set year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Smooth scroll for anchor links
+    // Smooth scroll for anchor links (and close mobile nav if used)
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -882,30 +1035,19 @@
       });
     });
 
-    // Mobile nav toggle (for small screens) - simple implementation
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    if (mobileToggle) {
-      mobileToggle.addEventListener('click', () => {
-        const nav = document.querySelector('.nav-links');
-        if (nav) nav.classList.toggle('active');
-      });
-    }
-
-    document.querySelectorAll('a[href="#brochure"]').forEach(el => {
-      el.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        const url = "https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/brochure.pdf";
-
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "Samriddhi_Daksh_Avenue_Brochure.pdf";
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-      });
+    // Brochure download — using uploaded local path (will be transformed to public URL by deployment if needed)
+    document.getElementById('downloadBrochureBtn').addEventListener('click', function (e) {
+      e.preventDefault();
+      const url = "/mnt/data/brochure.pdf"; // local uploaded brochure path
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Samriddhi_Daksh_Avenue_Brochure.pdf";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     });
 
+    // Form submission and WhatsApp auto message
     document.getElementById("enquiryForm").addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -952,6 +1094,7 @@
       console.log("Lead Captured:", payload);
     });
 
+    // Floating button scroll to lead form
     document.querySelector('#floating-enquiry-btn').addEventListener('click', function (e) {
       const target = document.querySelector('#lead-form');
       if (target) {
