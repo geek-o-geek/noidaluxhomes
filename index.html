@@ -785,6 +785,55 @@
   cursor: zoom-in;
 }
 
+.gallery-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  padding: 0 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: zoom-in;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+/* Lightbox */
+#lightbox-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightbox-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
+
+#lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
 
 </style>
 </head>
@@ -801,7 +850,7 @@
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#overview">Overview</a>
         <a href="#floorPlan">Floor Plan</a>
-        <a href="#amenities">Amenities</a>
+        <a href="#gallery">Amenities</a>
         <a href="#location">Location</a>
         <a class="cta-btn" href="#contact">Know More</a>
       </nav>
@@ -821,7 +870,7 @@
     <div style="color:var(--muted);margin-bottom:8px">Samriddhi Daksh Avenue</div>
     <nav style="margin-top:12px">
       <a href="#overview" class="drawer-link">Overview</a>
-      <a href="#amenities" class="drawer-link">Amenities</a>
+      <a href="#gallery" class="drawer-link">Amenities</a>
       <a href="#location" class="drawer-link">Location</a>
       <a href="#contact" class="drawer-link">Contact / Book</a>
       <a href="#lead-form" class="drawer-link">Quick Enquiry</a>
@@ -966,7 +1015,7 @@
           </div>
 
           <!-- Galleries -->
-          <div class="galleries">
+          <!-- <div class="galleries">
             <div class="gallery card">
               <h3>Amenities & Exterior</h3>
               <div class="thumb-grid">
@@ -1013,7 +1062,7 @@
               <p class="muted" style="margin-top:10px">Modern finishes and spacious rooms tailored for comfortable
                 living.</p>
             </div>
-          </div>
+          </div> -->
 
           <!-- Floor plans -->
           <div class="card floorplans" id="floorPlan" style="margin-top:16px">
@@ -1022,14 +1071,14 @@
               class="zoomable"
               src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_11.jpg"
               alt="Floor plan type A">
-            <img
+            <!-- <img
               class="zoomable"
               src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_12.jpg"
               alt="Floor plan type B">
             <img
               class="zoomable"
               src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_13.png"
-              alt="Floor plan type C">
+              alt="Floor plan type C"> -->
             <p class="muted" style="margin-top:10px">Saleable: 1980 sq ft (Type A shown). For precise area breakup refer
               to brochure.</p>
           </div>
@@ -1175,6 +1224,33 @@
         </div>
       </div>
     </section>
+
+    <section id="gallery" style="margin-top:60px;">
+      <h2 style="text-align:center; color:#1a5276; font-size:2.3rem; margin-bottom:15px;">
+        Project Gallery
+      </h2>
+      <p style="text-align:center; color:#6b7280; max-width:600px; margin:0 auto 30px;">
+        Explore interiors, amenities, and architectural highlights of Samriddhi Daksh Avenue.
+      </p>
+
+      <div class="gallery-grid">
+        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_07.jpg" alt="Bedroom Interior">
+        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_08.jpg" alt="Dining Area">
+        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_10.jpg" alt="Kitchen View">
+        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_13.png" alt="Amenities Exterior">
+        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_09.png" alt="Clubhouse View">
+        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_04.jpg" alt="Gymnasium">
+        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_12.jpg" alt="Aerial View Towers">
+        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_14.jpg" alt="Location Map">
+      </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal">
+      <span id="lightbox-close">&times;</span>
+      <img id="lightbox-img" src="">
+    </div>
+
 
     <!-- CTA -->
     <section class="cta-section" id="contact" style="margin-top:24px">
@@ -1518,9 +1594,7 @@
     console.log('WhatsApp QR opened');
     // fire analytics event here (gtag/pixel)
   });
-</script>
 
-<script>
   // create overlay dynamically
   var overlay1 = document.createElement('div');
   overlay.className = 'lightbox-overlay';
@@ -1539,6 +1613,29 @@
   overlay.addEventListener('click', () => {
     overlay.style.display = 'none';
   });
+
+  const galleryImages = document.querySelectorAll('.gallery-grid img');
+  const modal = document.getElementById('lightbox-modal');
+  const modalImg = document.getElementById('lightbox-img');
+  const closeBtn1 = document.getElementById('lightbox-close');
+
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn1.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target !== modalImg) {
+      modal.style.display = 'none';
+    }
+  });
+
 </script>
 
 
