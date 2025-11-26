@@ -28,8 +28,9 @@
     }
 
     * {
-      box-sizing: border-box
+      box-sizing: border-box;
     }
+
 
     html,
     body {
@@ -870,6 +871,23 @@
   font-weight: bold;
 }
 
+/* FIX: Strategic Location responsive layout */
+@media (max-width: 900px) {
+  #location > div {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+}
+
+/* Fix image scale on mobile */
+@media (max-width: 600px) {
+  #location img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 10px !important;
+    object-fit: cover !important;
+  }
+}
 
 
 </style>
@@ -1215,7 +1233,7 @@
                 <path d="M3 21V8a1 1 0 0 1 1-1h3v14H3z"></path>
                 <path d="M13 21V4h6a1 1 0 0 1 1 1v16h-7z"></path>
               </svg>
-              <strong>12–15 mins</strong> — Pari Chowk, Greater Noida
+              <strong>15 mins</strong> — Pari Chowk, Greater Noida
             </li>
             <li>
               <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
@@ -1248,7 +1266,7 @@
                 <circle cx="9" cy="20" r="1"></circle>
                 <circle cx="19" cy="20" r="1"></circle>
               </svg>
-              <strong>5–10 mins</strong> — Schools, Hospitals, Local Markets
+              <strong>10 mins</strong> — Schools, Hospitals, Local Markets
             </li>
           </ul>
         </div>
