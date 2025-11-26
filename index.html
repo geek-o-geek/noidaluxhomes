@@ -1586,7 +1586,6 @@
 
   <script>
   // Elements
-  const waQrBtn = document.getElementById('waQrBtn');
   const waQrModal = document.getElementById('waQrModal');
   const waCloseBtn = document.getElementById('waCloseBtn');
   const overlayToggle = (show) => {
@@ -1600,10 +1599,6 @@
       document.body.style.overflow='';
     }
   };
-
-  waQrBtn.addEventListener('click', (e) => {
-    overlayToggle(true);
-  });
 
   waCloseBtn.addEventListener('click', (e) => {
     overlayToggle(false);
@@ -1630,10 +1625,6 @@
   // Optional: track clicks (analytics) - example console log
   document.getElementById('waChatBtn').addEventListener('click', () => {
     console.log('WhatsApp CTA clicked');
-    // fire analytics event here (gtag/pixel)
-  });
-  waQrBtn.addEventListener('click', () => {
-    console.log('WhatsApp QR opened');
     // fire analytics event here (gtag/pixel)
   });
 
