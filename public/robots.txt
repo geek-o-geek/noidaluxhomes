@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Block unnecessary routes
+Disallow: /api/
+Disallow: /admin/
+
+# Allow Google to index images
+Allow: /brochure_images/
+
+# Sitemap location
+Sitemap: https://noidaluxhomes.vercel.app/sitemap.xml
