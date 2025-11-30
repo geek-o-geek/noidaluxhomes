@@ -51,140 +51,140 @@ export default function RootLayout({ children }) {
       </head>
       <body className="bg-[#fbfbfb] text-[#2c3e50] antialiased">
         <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "RealEstateListing",
-      "name": "Samriddhi Daksh Avenue – 3BHK Luxury Apartments",
-      "description":
-        "Luxury 3BHK 1980 sq ft apartments in Samriddhi Daksh Avenue, Sector 150 Noida. Premium low-density project with expressway connectivity, metro access and early 2027 possession.",
-      "url": "https://noidaluxhomes.vercel.app",
-      "image": "https://noidaluxhomes.vercel.app/brochure_images/page_07.jpg",
-      "numberOfRooms": 3,
-      "floorSize": {
-        "@type": "QuantitativeValue",
-        "value": "1980",
-        "unitCode": "SQF",
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Sector 150",
-        "addressLocality": "Noida",
-        "addressRegion": "UP",
-        "postalCode": "201310",
-        "addressCountry": "IN",
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "28.5156",
-        "longitude": "77.4697",
-      },
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "priceCurrency": "INR",
-        "price": "0",
-      },
-    }),
-  }}
-/>
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "RealEstateListing",
+                "name": "Samriddhi Daksh Avenue – 3BHK Luxury Apartments",
+                "description":
+                  "Luxury 3BHK 1980 sq ft apartments in Samriddhi Daksh Avenue, Sector 150 Noida. Premium low-density project with expressway connectivity, metro access and early 2027 possession.",
+                "url": "https://noidaluxhomes.vercel.app",
+                "image": "https://noidaluxhomes.vercel.app/brochure_images/page_07.jpg",
+                "numberOfRooms": 3,
+                "floorSize": {
+                  "@type": "QuantitativeValue",
+                  "value": "1980",
+                  "unitCode": "SQF",
+                },
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Sector 150",
+                  "addressLocality": "Noida",
+                  "addressRegion": "UP",
+                  "postalCode": "201310",
+                  "addressCountry": "IN",
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "28.5156",
+                  "longitude": "77.4697",
+                },
+                "offers": {
+                  "@type": "Offer",
+                  "availability": "https://schema.org/InStock",
+                  "priceCurrency": "INR",
+                  "price": "0",
+                },
+              }),
+            }}
+          />
 
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "NoidaLuxHomes",
-      "telephone": "+918979333131",
-      "email": "arjun.sisodia8@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Sector 150",
-        "addressLocality": "Noida",
-        "addressRegion": "UP",
-        "postalCode": "201310",
-        "addressCountry": "IN",
-      },
-      "url": "https://noidaluxhomes.vercel.app",
-      "image": "https://noidaluxhomes.vercel.app/brochure_images/page_08.jpg",
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "28.5156",
-        "longitude": "77.4697",
-      },
-    }),
-  }}
-/>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "NoidaLuxHomes",
+                "telephone": "+918979333131",
+                "email": "arjun.sisodia8@gmail.com",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Sector 150",
+                  "addressLocality": "Noida",
+                  "addressRegion": "UP",
+                  "postalCode": "201310",
+                  "addressCountry": "IN",
+                },
+                "url": "https://noidaluxhomes.vercel.app",
+                "image": "https://noidaluxhomes.vercel.app/brochure_images/page_08.jpg",
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": "28.5156",
+                  "longitude": "77.4697",
+                },
+              }),
+            }}
+          />
 
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://noidaluxhomes.vercel.app",
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Samriddhi Daksh Avenue",
-          "item": "https://noidaluxhomes.vercel.app",
-        },
-      ],
-    }),
-  }}
-/>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://noidaluxhomes.vercel.app",
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Samriddhi Daksh Avenue",
+                    "item": "https://noidaluxhomes.vercel.app",
+                  },
+                ],
+              }),
+            }}
+          />
 
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is the size of the 3BHK apartment?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The 3BHK units feature a spacious 1980 sq ft super area with large balconies.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "Where is the project located?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The project is located in Sector 150 Noida, a premium green low-density residential hub.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "What amenities are available?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Amenities include a 40,000 sq ft clubhouse, gym, pool, sports courts, gardens, kids play area and more.",
-          },
-        },
-        {
-          "@type": "Question",
-          "name": "When is the possession?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Expected possession is Early 2027.",
-          },
-        },
-      ],
-    }),
-  }}
-/>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": "What is the size of the 3BHK apartment?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "The 3BHK units feature a spacious 1980 sq ft super area with large balconies.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "Where is the project located?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "The project is located in Sector 150 Noida, a premium green low-density residential hub.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "What amenities are available?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Amenities include a 40,000 sq ft clubhouse, gym, pool, sports courts, gardens, kids play area and more.",
+                    },
+                  },
+                  {
+                    "@type": "Question",
+                    "name": "When is the possession?",
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Expected possession is Early 2027.",
+                    },
+                  },
+                ],
+              }),
+            }}
+          />
 
         {children}
       </body>

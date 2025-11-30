@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function FloorPlan() {
   return (
     <section id="floorPlan" className="mt-6">
@@ -6,7 +8,7 @@ export default function FloorPlan() {
           Floor Plan
         </h3>
 
-        <img
+        <Image
           className="rounded-lg cursor-pointer"
           src="/brochure_images/page_11.jpg"
           alt="Floor Plan 1980 sq ft"

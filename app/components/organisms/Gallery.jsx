@@ -106,7 +106,7 @@ export default function Gallery() {
         >
           <div className="relative max-w-[90%] max-h-[85vh]">
             {/* Image */}
-            <img
+            <Image
               src={images[lightboxIndex].src}
               className="max-w-full max-h-[85vh] rounded-lg shadow-xl"
             />

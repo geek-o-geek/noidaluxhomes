@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function WhatsAppQRModal({ open, onClose }) {
   if (!open) return null;
 
@@ -28,7 +30,7 @@ export default function WhatsAppQRModal({ open, onClose }) {
           <strong>+91 89793 33131</strong>
         </small>
 
-        <img
+        <Image
           src="/whatsapp_qr.png"
           alt="WhatsApp QR"
           className="rounded-lg w-64 h-64 object-contain mx-auto mt-2"

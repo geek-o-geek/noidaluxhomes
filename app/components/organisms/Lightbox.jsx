@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { galleryImages } from "./galleryImages";
+import Image from "next/image";
 
 export default function Lightbox({ open, index, onClose, onPrev, onNext }) {
   useEffect(() => {
@@ -29,7 +30,7 @@ export default function Lightbox({ open, index, onClose, onPrev, onNext }) {
         className="relative"
         onClick={(e) => e.stopPropagation()}
       >
-        <img
+        <Image
           id="lightbox-img"
           src={img.src}
           alt={img.caption}
