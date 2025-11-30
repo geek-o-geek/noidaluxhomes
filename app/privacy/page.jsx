@@ -2,6 +2,15 @@ export const metadata = {
   title: "Privacy Policy - NoidaLuxHomes",
 };
 
+/**
+ * The PrivacyPage component displays the privacy policy for NoidaLuxHomes.
+ *
+ * It explains how we collect, use, and protect your information when you use our website or contact us regarding Samriddhi Datt Avenue, Sector 150 Noida.
+ *
+ * The component renders a main element containing the privacy policy text.
+ *
+ * The privacy policy is divided into sections explaining the information we collect, how we use your information, information sharing, data security, and your rights.
+ */
 export default function PrivacyPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-10">

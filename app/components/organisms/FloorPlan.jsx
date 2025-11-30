@@ -8,7 +8,7 @@ export default function FloorPlan() {
           Floor Plan
         </h3>
 
-        <Image
+        <img
           className="rounded-lg cursor-pointer"
           src="/brochure_images/page_11.jpg"
           alt="Floor Plan 1980 sq ft"

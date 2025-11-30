@@ -35,7 +35,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Samriddhi Daksh Avenue – Sector 150 Noida | Luxury 3BHK",
+    title: "Samriddhi Daksh Avenue - Sector 150 Noida | Luxury 3BHK",
     description:
       "Explore luxury 3BHK 1980 sq ft residences in Noida’s greenest low-density sector.",
     images: ["https://noidaluxhomes.vercel.app/brochure_images/page_07.jpg"],

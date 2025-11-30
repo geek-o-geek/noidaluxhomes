@@ -483,3 +483,52 @@ body {
   100% { box-shadow: 0 0 0 rgba(216, 166, 0, 0.0); }
 }
 
+article h1, article h2, article h3 {
+  font-family: Inter, sans-serif;
+  scroll-margin-top: 100px;
+}
+
+article p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #374151;
+}
+
+article ul {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+article ul li {
+  margin-bottom: 6px;
+  line-height: 1.8;
+}
+
+.blog-article p {
+  font-size: 17px;
+  line-height: 1.85;
+  color: #374151;
+}
+
+.blog-article h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #1a5276;
+}
+
+.blog-article ul {
+  margin: 10px 0 25px 20px;
+}
+
+.blog-article li {
+  margin-bottom: 6px;
+  line-height: 1.8;
+}
+
+.nav-links a {
+  @apply text-[15px] font-semibold text-gray-700 hover:text-[var(--primary)] transition;
+}
+

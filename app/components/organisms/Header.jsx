@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import DownloadButton from "../atoms/DownloadButton";
+import Link from "next/link";
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -48,7 +49,9 @@ export default function Header() {
             <a href="#floorPlan" className="nav-link">Floor Plan</a>
             <a href="#gallery" className="nav-link">Gallery</a>
             <a href="#location" className="nav-link">Location</a>
-
+            <Link href="/blog" className="hover:text-[var(--primary)]">
+              Blog
+            </Link>
             <a
               href="#contact"
               className="px-5 py-2 rounded-full bg-[#1a5276] text-white font-bold hover:bg-[#163f36] transition"

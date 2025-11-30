@@ -78,7 +78,7 @@ export default function Gallery() {
               onClick={() => openLightbox(index)}
             >
               {/* Image */}
-              <Image
+              <img
                 src={img.src}
                 alt={img.caption}
                 className="w-full h-40 md:h-48 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110"
@@ -106,7 +106,7 @@ export default function Gallery() {
         >
           <div className="relative max-w-[90%] max-h-[85vh]">
             {/* Image */}
-            <Image
+            <img
               src={images[lightboxIndex].src}
               className="max-w-full max-h-[85vh] rounded-lg shadow-xl"
             />
