@@ -27,6 +27,15 @@ export default function RootLayout({ children }) {
         <meta property="og:image" content="/brochure_images/page_04.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Samriddhi Daksh Avenue - Luxury 3BHK 1980 sq ft Noida" />
+        <meta property="og:description" content="High-end luxury 3BHK homes in Sector 150 Noida. Explore amenities, gallery & location." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Samriddhi Daksh Avenue - 3BHK Luxury Homes in Noida" />
+        <meta name="twitter:description" content="1980 sq ft luxury apartments in premium Sector 150 Noida." />
+        <meta name="twitter:image" content="https://noidaluxhomes.vercel.app/brochure_images/page_07.jpg" />
+
+
         <link rel="canonical" href="https://noidaluxhomes.vercel.app/" />
         <script
           type="application/ld+json"

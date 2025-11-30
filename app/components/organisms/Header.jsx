@@ -22,6 +22,8 @@ export default function Header() {
     <>
       {/* HEADER BAR */}
       <header
+        aria-label="Main navigation"
+        role="navigation"
         className={`fixed top-0 left-0 w-full z-[1000] transition-all duration-300 ${
           scrolled
             ? "bg-white/80 backdrop-blur-md shadow-md"

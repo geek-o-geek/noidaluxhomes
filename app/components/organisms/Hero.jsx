@@ -145,6 +145,7 @@ export default function Hero() {
             muted
             loop
             playsInline
+            poster="/brochure_images/page_07.jpg"
           >
             <source src="/video/gallery_ultrawide.mp4" type="video/mp4" />
           </video>
