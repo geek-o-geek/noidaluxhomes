@@ -181,7 +181,6 @@
   var currentIndex = 0;
 
   const galleryItems = document.querySelectorAll('.gallery-item img');
-  const modalCaption = document.getElementById('lightbox-caption');
 
   /**
    * Opens the lightbox modal at the given index.
@@ -190,7 +189,6 @@
   function openLightbox(index) {
     currentIndex = index;
     modalImg.src = images[currentIndex].src;
-    modalCaption.textContent = images[currentIndex].dataset.caption;
     modal.style.display = 'flex';
   }
 
@@ -202,13 +200,11 @@
   nextBtn.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % images.length;
     modalImg.src = images[currentIndex].src;
-    modalCaption.textContent = images[currentIndex].dataset.caption;
   });
 
   prevBtn.addEventListener('click', () => {
     currentIndex = (currentIndex - 1 + images.length) % images.length;
     modalImg.src = images[currentIndex].src;
-    modalCaption.textContent = images[currentIndex].dataset.caption;
   });
 
   // Click outside image closes lightbox
