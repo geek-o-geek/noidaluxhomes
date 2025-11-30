@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import DownloadButton from "../atoms/DownloadButton";
 
 export default function Header() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -109,13 +110,21 @@ export default function Header() {
           <a href="#contact" className="drawer-link" onClick={closeDrawer}>
             Contact / Book Visit
           </a>
-          <a
+          {/* <a
             href="/brochure_images/brochure.pdf"
             className="drawer-link"
+            target="_blank"
             onClick={closeDrawer}
           >
             Download Brochure
-          </a>
+          </a> */}
+          <DownloadButton
+            filePath="/brochure_images/brochure.pdf"
+            label="Download Brochure"
+            className="drawer-link"
+            onClose={closeDrawer}
+          />
+
         </nav>
 
         <div className="mt-auto pt-4">

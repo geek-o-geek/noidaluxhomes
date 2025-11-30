@@ -1,3 +1,5 @@
+import DownloadButton from "../atoms/DownloadButton";
+
 export default function Hero() {
   return (
     <section
@@ -88,8 +90,9 @@ export default function Hero() {
             </a>
 
             {/* Brochure Button */}
-            <a
+            {/* <a
                 href="/brochure_images/brochure.pdf"
+                target="_blank"
                 className="cta-btn-outline inline-flex items-center gap-2"
             >
                 <svg
@@ -106,7 +109,26 @@ export default function Hero() {
                 <line x1="12" y1="15" x2="12" y2="3"/>
                 </svg>
                 <span>Download Brochure</span>
-            </a>
+            </a> */}
+
+            <DownloadButton
+              filePath="/brochure_images/brochure.pdf"
+              label="Download Brochure"
+              className="cta-btn-outline inline-flex items-center gap-2"
+              icon={<svg
+                            className="icon-20"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            >
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>}
+            />
 
             </div>
 

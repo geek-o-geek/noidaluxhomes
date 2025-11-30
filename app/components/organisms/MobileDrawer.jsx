@@ -1,4 +1,5 @@
 "use client";
+import DownloadButton from "../atoms/DownloadButton";
 
 export default function MobileDrawer({ open, onClose }) {
   return (
@@ -36,9 +37,15 @@ export default function MobileDrawer({ open, onClose }) {
           <a href="#lead-form" className="drawer-link" onClick={onClose}>
             Quick Enquiry
           </a>
-          <a href="/brochure_images/brochure.pdf" className="drawer-link" onClick={onClose}>
+          {/* <a href="/brochure_images/brochure.pdf" className="drawer-link" target="_blank" onClick={onClose}>
             Download Brochure
-          </a>
+          </a> */}
+          <DownloadButton
+                      filePath="/brochure_images/brochure.pdf"
+                      label="Download Brochure"
+                      className="drawer-link"
+                      onClose={onClose}
+                    />
         </nav>
 
         <div className="mt-auto">

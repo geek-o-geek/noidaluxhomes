@@ -3,20 +3,20 @@
 import { useState } from "react";
 
 // Components
-import Header from "./components/Header";
-import MobileDrawer from "./components/MobileDrawer";
-import Hero from "./components/Hero";
-import Overview from "./components/Overview";
-import FloorPlan from "./components/FloorPlan";
-import Highlights from "./components/Highlights";
-import LocationSection from "./components/LocationSection";
-import Gallery from "./components/Gallery";
-import Lightbox from "./components/Lightbox";
-import CTASection from "./components/CTASection";
-import LeadForm from "./components/LeadForm";
-import Footer from "./components/Footer";
-import FloatingWhatsApp from "./components/FloatingWhatsApp";
-import WhatsAppQRModal from "./components/WhatsAppQRModal";
+import Header from "./components/organisms/Header";
+import MobileDrawer from "./components/organisms/MobileDrawer";
+import Hero from "./components/organisms/Hero";
+import Overview from "./components/organisms/Overview";
+import FloorPlan from "./components/organisms/FloorPlan";
+import Highlights from "./components/organisms/Highlights";
+import LocationSection from "./components/organisms/LocationSection";
+import Gallery from "./components/organisms/Gallery";
+import Lightbox from "./components/organisms/Lightbox";
+import CTASection from "./components/organisms/CTASection";
+import LeadForm from "./components/organisms/LeadForm";
+import Footer from "./components/organisms/Footer";
+import FloatingWhatsApp from "./components/organisms/FloatingWhatsApp";
+import WhatsAppQRModal from "./components/organisms/WhatsAppQRModal";
 
 export default function HomePage() {
   const [drawerOpen, setDrawerOpen] = useState(false);

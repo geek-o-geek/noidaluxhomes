@@ -66,7 +66,7 @@ export default function Gallery() {
         </p>
 
         <p className="text-center text-gray-500 text-sm mb-4 animate-fadeInUp delay-150">
-          📸 Tap any image to enlarge
+          Tap any image to enlarge
         </p>
 
         {/* Polished Masonry-like Grid */}
@@ -78,7 +78,7 @@ export default function Gallery() {
               onClick={() => openLightbox(index)}
             >
               {/* Image */}
-              <Image
+              <img
                 src={img.src}
                 alt={img.caption}
                 className="w-full h-40 md:h-48 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110"

@@ -104,18 +104,6 @@ export default function LeadForm() {
             >
               Submit & WhatsApp
             </button>
-
-            {/* Brochure */}
-            {/* <button
-              type="button"
-              onClick={() => {
-                window.location.href = "#brochure";
-              }}
-              className="w-full sm:w-auto border border-gray-400 text-gray-700 px-7 py-3 
-                         rounded-xl font-semibold hover:bg-gray-100 transition"
-            >
-              Download Brochure
-            </button> */}
           </div>
 
           {/* Success message */}
