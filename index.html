@@ -13,887 +13,8 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* Reset / base */
-    :root {
-      --primary: #1a5276;
-      --gold: #d8a600;
-      --accent: #d8942c;
-      --text: #2c3e50;
-      --muted: #6b7280;
-      --bg: #fbfbfb;
-      --card-shadow: rgba(0, 0, 0, 0.06);
-      --radius: 14px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      background: var(--bg);
-      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-      color: var(--text);
-      -webkit-font-smoothing: antialiased
-    }
-
-    a {
-      color: inherit
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block
-    }
-
-    /* Header */
-    header {
-      position: fixed;
-      left: 0;
-      right: 0;
-      top: 0;
-      background: #fff;
-      z-index: 1200;
-      box-shadow: 0 6px 22px rgba(2, 6, 23, 0.04);
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column
-    }
-
-    .brand .title {
-      font-weight: 700;
-      color: var(--primary);
-      font-size: 18px
-    }
-
-    .brand .subtitle {
-      font-size: 13px;
-      color: var(--muted)
-    }
-
-    /* desktop menu */
-    .nav-links {
-      display: flex;
-      gap: 18px;
-      align-items: center
-    }
-
-    .nav-links a {
-      font-weight: 600;
-      color: var(--gold);
-      text-decoration: none;
-      transition: color .2s
-    }
-
-    .nav-links a:hover {
-      color: #b68b00
-    }
-
-    .cta-btn {
-      background: var(--primary);
-      color: #fff !important;
-      padding: 10px 16px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700
-    }
-
-    /* mobile hamburger */
-    .hamburger {
-      display: none;
-      background: none;
-      border: 0;
-      font-size: 22px;
-      cursor: pointer;
-      color: var(--primary)
-    }
-
-    /* Drawer menu (right slide) */
-    .drawer {
-      position: fixed;
-      top: 0;
-      right: 0;
-      height: 100vh;
-      width: min(92vw, 360px);
-      max-width: 360px;
-      background: #fff;
-      box-shadow: -12px 0 40px rgba(0, 0, 0, 0.12);
-      transform: translateX(110%);
-      transition: transform .32s cubic-bezier(.2, .9, .2, 1);
-      z-index: 1400;
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
-      gap: 12px;
-    }
-
-    .drawer.open {
-      transform: translateX(0);
-    }
-
-    .drawer .close {
-      margin-left: auto;
-      background: none;
-      border: 0;
-      font-size: 20px;
-      cursor: pointer;
-      color: var(--muted)
-    }
-
-    .drawer a {
-      display: block;
-      padding: 12px 8px;
-      border-radius: 8px;
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 700
-    }
-
-    .drawer a.cta {
-      background: var(--primary);
-      color: #fff;
-      text-align: center;
-      margin-top: 10px
-    }
-
-    /* Drawer overlay */
-    .drawer-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.45);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .24s;
-      z-index: 1300;
-    }
-
-    .drawer-overlay.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    /* Hero */
-    .hero {
-      background: linear-gradient(135deg, #0f5132 0%, #163f36 100%);
-      color: #fff;
-      padding: 64px;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-      overflow: hidden;
-      margin-top: 64px;
-      max-width: 100%;
-    }
-
-    .hero .wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr minmax(240px, 420px);
-      gap: 28px;
-      align-items: center;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.12);
-      padding: 8px 14px;
-      border-radius: 999px;
-      font-weight: 700
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      margin: 6px 0 12px;
-      line-height: 1.05
-    }
-
-    .hero p.lead {
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 18px
-    }
-
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px
-    }
-
-    .feature {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.06);
-      padding: 8px 12px;
-      border-radius: 999px;
-      font-weight: 600;
-      color: #fff
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--gold);
-      color: #2b2300;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: 800;
-      text-decoration: none;
-      font-size: 16px
-    }
-
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #fff;
-      padding: 12px 18px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 16px
-    }
-
-    .hero-image {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      border-radius: 12px;
-      margin-top: 14px
-    }
-
-    /* Main layout */
-    .container {
-      max-width: 1200px;
-      margin: 26px auto;
-      padding: 0 20px
-    }
-
-    .main-grid {
-      display: grid;
-      grid-template-columns: 1fr minmax(260px, 360px);
-      gap: 28px
-    }
-
-    .card {
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: 0 12px 40px var(--card-shadow);
-      padding: 18px
-    }
-
-    .badge {
-      display: inline-block;
-      background: #eaf6ee;
-      color: var(--primary);
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-weight: 700
-    }
-
-    .galleries {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-top: 18px
-    }
-
-    .thumb-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px
-    }
-
-    .thumb-grid img {
-      height: 140px;
-      object-fit: cover;
-      border-radius: 10px
-    }
-
-    .floorplans img {
-      border-radius: 10px;
-      margin-top: 10px
-    }
-
-    /* right column */
-    .right .tag {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 8px
-    }
-
-    .right .image {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 12px
-    }
-
-    /* connectivity list */
-    .connectivity-list {
-      list-style: none;
-      padding: 0;
-      margin: 12px 0
-    }
-
-    .connectivity-list li {
-      padding: 8px 0;
-      border-bottom: 1px solid #f1f1f1;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--muted)
-    }
-
-    /* CTA */
-    .cta-section {
-      background: linear-gradient(135deg, #0f5132 0%, #163f36 100%);
-      color: #fff;
-      padding: 48px;
-      border-radius: 12px;
-      margin-top: 22px;
-      text-align: center
-    }
-
-    .cta-section a {
-      display: inline-block;
-      padding: 12px 18px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 800
-    }
-
-    .cta-section .call {
-      background: var(--gold);
-      color: #2b2300;
-      margin-right: 10px
-    }
-
-    footer {
-      margin-top: 26px;
-      background: #0f2b22;
-      color: #fff;
-      padding: 28px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #0f5132 0%, #163f36 100%);
-    }
-
-    footer a {
-      color: var(--gold);
-      text-decoration: none;
-      font-weight: 700
-    }
-
-    /* Floating Sticky Enquiry Button */
-    #floating-enquiry-btn {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background: #e67e22;
-      color: #fff;
-      padding: 15px 20px;
-      border-radius: 50px;
-      font-size: 1.05rem;
-      font-weight: 600;
-      text-decoration: none;
-      box-shadow: 0 10px 25px rgba(230, 126, 34, 0.35);
-      z-index: 1500;
-      display: flex;
-      align-items: center;
-      gap: 8px
-    }
-
-    #floating-enquiry-btn:hover {
-      background: #d35400;
-      transform: translateY(-3px)
-    }
-
-    @keyframes pulseEnquiry {
-      0% {
-        transform: scale(1)
-      }
-
-      50% {
-        transform: scale(1.06)
-      }
-
-      100% {
-        transform: scale(1)
-      }
-    }
-
-    #floating-enquiry-btn {
-      animation: pulseEnquiry 2s infinite
-    }
-
-    @media (max-width:600px) {
-      #floating-enquiry-btn {
-        padding: 12px 16px;
-        font-size: 0.98rem;
-        bottom: 18px;
-        right: 16px
-      }
-    }
-
-    /* Lead form improved */
-    #lead-form {
-      padding: 60px 20px;
-      background: #eef1f5
-    }
-
-    .form-box {
-      max-width: 640px;
-      margin: 0 auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-      position: relative
-    }
-
-    .form-box h2 {
-      font-size: 1.9rem;
-      color: var(--primary);
-      margin: 0 0 8px;
-      text-align: center
-    }
-
-    .form-box p {
-      color: #666;
-      margin: 0 0 22px;
-      text-align: center
-    }
-
-    .form-field {
-      margin-bottom: 16px
-    }
-
-    .form-field label {
-      display: block;
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 8px
-    }
-
-    .form-field input {
-      width: 100%;
-      padding: 12px 14px;
-      border-radius: 8px;
-      border: 1px solid #d6d6d6;
-      font-size: 1rem
-    }
-
-    .form-field input:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 6px 18px rgba(26, 82, 118, 0.08)
-    }
-
-    .form-actions {
-      display: flex;
-      gap: 12px;
-      margin-top: 8px
-    }
-
-    .form-actions .primary {
-      flex: 1;
-      background: var(--primary);
-      color: #fff;
-      border: 0;
-      padding: 14px;
-      border-radius: 8px;
-      font-weight: 800;
-      cursor: pointer
-    }
-
-    .form-actions .secondary {
-      flex: 1;
-      background: transparent;
-      border: 1px solid #d6d6d6;
-      padding: 14px;
-      border-radius: 8px;
-      cursor: pointer
-    }
-
-    #formSuccess {
-      display: none;
-      margin-top: 16px;
-      color: green;
-      text-align: center
-    }
-
-    /* icon sizing convenience classes */
-    .icon-18 {
-      width: 18px;
-      height: 18px;
-      display: inline-block;
-      vertical-align: middle
-    }
-
-    .icon-20 {
-      width: 20px;
-      height: 20px;
-      display: inline-block;
-      vertical-align: middle
-    }
-
-    /* Responsive tweaks */
-    @media (max-width:980px) {
-      .hero .wrap {
-        grid-template-columns: 1fr
-      }
-
-      .main-grid {
-        grid-template-columns: 1fr
-      }
-
-      .galleries {
-        grid-template-columns: 1fr
-      }
-    }
-
-    @media (max-width:640px) {
-      .hero {
-        padding: 84px 16px 44px
-      }
-
-      .hero h1 {
-        font-size: 26px
-      }
-
-      .hero-image {
-        height: 200px
-      }
-
-      .brand .title {
-        font-size: 16px
-      }
-
-      .nav-links {
-        display: none
-      }
-
-      .hamburger {
-        display: block
-      }
-
-      .main-grid {
-        gap: 18px;
-        padding-bottom: 10px
-      }
-
-      .card {
-        padding: 14px
-      }
-
-      .form-box {
-        padding: 28px
-      }
-    }
-
-    /* final safety to avoid horizontal scroll */
-    main,
-    section,
-    footer {
-      max-width: 1200px;
-      margin-left: auto;
-      margin-right: auto;
-      padding-left: 20px;
-      padding-right: 20px
-    }
-
-    /* FIX: Strategic Location section responsive */
-    @media (max-width: 900px) {
-      #location>div {
-        grid-template-columns: 1fr !important;
-      }
-    }
-
-    @media (max-width: 600px) {
-      #location img {
-        height: 220px !important;
-        object-fit: cover;
-      }
-    }
-
-    /* Lightbox Navigation Arrows */
-.lightbox-nav {
-  position: absolute;
-  top: 50%;
-  font-size: 50px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  user-select: none;
-  padding: 10px 18px;
-  border-radius: 6px;
-  background: rgba(0,0,0,0.25);
-  transform: translateY(-50%);
-  transition: 0.2s;
-}
-
-#lightbox-prev { left: 20px; }
-#lightbox-next { right: 20px; }
-
-.lightbox-nav:hover {
-  background: rgba(255,255,255,0.3);
-  color: #fff;
-}
-
-#lightbox-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.96); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-  </style>
-  <!-- WhatsApp Floating Button + QR Modal -->
-<style>
-  /* Floating button */
-  .wa-fab {
-    position: fixed;
-    right: 18px;
-    bottom: 18px;
-    z-index: 99999;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    pointer-events: auto;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
-  }
-
-  .wa-fab .wa-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: linear-gradient(180deg,#25D366,#16a34a);
-    color: #fff;
-    padding: 12px 16px;
-    border-radius: 999px;
-    box-shadow: 0 8px 30px rgba(37,211,102,0.22);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 14px;
-    border: none;
-    cursor: pointer;
-    transition: transform .18s ease, box-shadow .18s ease;
-  }
-
-  .wa-fab .wa-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(37,211,102,0.22); }
-
-  .wa-fab .wa-qr {
-    width: 46px;
-    height: 46px;
-    background: #fff;
-    border-radius: 10px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 22px rgba(2,6,23,0.08);
-    cursor: pointer;
-    border: 2px solid rgba(0,0,0,0.04);
-  }
-
-  .wa-fab svg { width: 20px; height: 20px; display:block; }
-
-  /* QR Modal */
-  .wa-qr-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 150000;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0,0,0,0.45);
-    padding: 20px;
-  }
-
-  .wa-qr-modal.open { display: flex; }
-
-  .wa-qr-card {
-    background: #fff;
-    padding: 18px;
-    border-radius: 12px;
-    max-width: 360px;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 18px 50px rgba(2,6,23,0.25);
-  }
-
-  .wa-qr-card img { width: 220px; height: auto; display:block; margin: 6px auto 12px; border-radius: 8px; }
-
-  .wa-qr-card p { margin: 0 0 10px; color: #333; font-weight:600; }
-  .wa-qr-card small { color: #666; display:block; margin-bottom:12px; font-size:13px; }
-
-  .wa-close {
-    display:inline-block;
-    padding:8px 12px;
-    border-radius:8px;
-    background:#f3f4f6;
-    border:1px solid #e6e6e6;
-    cursor:pointer;
-    font-weight:700;
-  }
-
-  @media (max-width:420px) {
-    .wa-fab { right: 12px; bottom: 12px; gap:8px; }
-    .wa-fab .wa-btn { padding: 10px 12px; font-size:13px; }
-    .wa-qr-card img { width: 180px; }
-  }
-
-  .hero-video {
-    width: 100%;
-    height: 420px;           /* match old hero-image height */
-    object-fit: cover;
-    border-radius: 12px;
-  }
-  @media(max-width:600px){
-    .hero-video {
-      height: 220px;
-    }
-  }
-
-  /* LIGHTBOX CONTAINER */
-.lightbox-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999;
-  padding: 20px;
-}
-
-.lightbox-overlay img {
-  max-width: 95%;
-  max-height: 95%;
-  border-radius: 10px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-  animation: zoomIn 0.3s ease;
-}
-
-@keyframes zoomIn {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-/* Cursor styling */
-.zoomable {
-  cursor: zoom-in;
-}
-
-.gallery-grid {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  padding: 0 20px;
-}
-
-.gallery-grid img {
-  width: 100%;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 12px;
-  cursor: zoom-in;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease;
-}
-
-.gallery-grid img:hover {
-  transform: scale(1.03);
-}
-
-/* Lightbox */
-#lightbox-modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.85);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-#lightbox-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 12px;
-}
-
-#lightbox-close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 35px;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-/* FIX: Strategic Location responsive layout */
-@media (max-width: 900px) {
-  #location > div {
-    grid-template-columns: 1fr !important;
-    gap: 20px !important;
-  }
-}
-
-/* Fix image scale on mobile */
-@media (max-width: 600px) {
-  #location img {
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 10px !important;
-    object-fit: cover !important;
-  }
-}
-
-@media(max-width: 900px){
-  grid-template-columns: 1fr !important;
-}
-
-</style>
+  <link href="./style.css" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -1007,18 +128,6 @@
           </div>
         </div>
 
-        <!-- <div class="feature" role="listitem">
-            <svg class="icon-18" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-              <path d="M3 21V8a1 1 0 0 1 1-1h3v14H3z"></path>
-              <path d="M13 21V4h6a1 1 0 0 1 1 1v16h-7z"></path>
-            </svg>
-            <span>Dual green zones — Yamuna & Hindon banks</span>
-          </div>
-        </div> -->
-        <!-- • 40,000 sq.ft. luxury clubhouse
-        • Axis & HDFC home loan approved • Possession: Early 2027 -->
-
         <div class="hero-ctas">
           <a class="btn-primary" href="tel:+918979333131" aria-label="Call 8979333131">
             <svg class="icon-20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
@@ -1044,11 +153,11 @@
       <!-- hero visual -->
       <div>
         <!-- <img class="hero-image"
-          src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_01.png"
+          src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_01.png"
           alt="Samriddhi Daksh Avenue — Hero Visual">
       </div> -->
       <video class="hero-video" autoplay muted loop playsinline>
-        <source src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/gallery_ultrawide.mp4" type="video/mp4">
+        <source src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/gallery_ultrawide.mp4" type="video/mp4">
       </video>
     </div>
   </section>
@@ -1072,71 +181,13 @@
             </div>
           </div>
 
-          <!-- Galleries -->
-          <!-- <div class="galleries">
-            <div class="gallery card">
-              <h3>Amenities & Exterior</h3>
-              <div class="thumb-grid">
-                <img
-                  class="zoomable"
-                  src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_03.png"
-                  alt="Swimming pool and exterior">
-                <img
-                  class="zoomable"
-                  src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_05.png"
-                  alt="Clubhouse & gardens">
-                <img
-                  class="zoomable"
-                  src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_06.png"
-                  alt="Sports courts">
-                <img
-                  class="zoomable"
-                  src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_04.jpg"
-                  alt="Landscape & tracks">
-              </div>
-              <p class="muted" style="margin-top:10px">Pool, courts, parks, jogging track, kids play area and more.</p>
-            </div>
-
-            <div class="gallery card">
-              <h3>Interiors & Lifestyle</h3>
-              <div class="thumb-grid">
-                <img
-                  class="zoomable"
-                  src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_07.jpg"
-                  alt="Living room">
-                <img
-                  class="zoomable"
-                  src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_08.jpg"
-                  alt="Dining / kitchen">
-                <img
-                  class="zoomable"
-                  src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_09.png"
-                  alt="Bedroom">
-                <img
-                  class="zoomable"
-                  src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_10.jpg"
-                  alt="Club interiors">
-              </div>
-              <p class="muted" style="margin-top:10px">Modern finishes and spacious rooms tailored for comfortable
-                living.</p>
-            </div>
-          </div> -->
-
           <!-- Floor plans -->
           <div class="card floorplans" id="floorPlan" style="margin-top:16px">
             <h3>Floor Plan</h3>
             <img
               class="zoomable"
-              src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_11.jpg"
+              src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_11.jpg"
               alt="Floor plan type A">
-            <!-- <img
-              class="zoomable"
-              src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_12.jpg"
-              alt="Floor plan type B">
-            <img
-              class="zoomable"
-              src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_13.png"
-              alt="Floor plan type C"> -->
             <p class="muted" style="margin-top:10px">Saleable: 1980 sq ft (Type A shown). For precise area breakup refer
               to brochure.</p>
           </div>
@@ -1158,7 +209,7 @@
           <div class="tag">Featured unit</div>
           <img class="image"
             class="zoomable"
-            src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_02.png"
+            src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_02.png"
             alt="Featured unit">
           <div style="font-weight:800;color:var(--primary)">Bright, well-planned layout — ideal for comfortable living</div>
           <div class="muted" style="margin-top:8px">Schedule site visit by appointment. Exact price, floor & tower
@@ -1277,7 +328,7 @@
         <div>
           <img
             class="zoomable"
-            src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_14.jpg"
+            src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_14.jpg"
             alt="Location map / site plan" style="width:100%;height:100%;object-fit:cover;border-radius:10px">
         </div>
       </div>
@@ -1296,14 +347,46 @@
       </p>
 
       <div class="gallery-grid">
-        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_07.jpg" alt="Bedroom Interior">
-        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_08.jpg" alt="Dining Area">
-        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_10.jpg" alt="Kitchen View">
-        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_13.png" alt="Amenities Exterior">
-        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_09.png" alt="Clubhouse View">
-        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_04.jpg" alt="Gymnasium">
-        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_12.jpg" alt="Aerial View Towers">
-        <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/page_14.jpg" alt="Location Map">
+        <div class="gallery-item">
+          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_07.jpg" alt="Samriddhi Daksh Avenue Bedroom Interior" data-caption="Premium Bedroom Interior">
+          <div class="gallery-caption">Premium Bedroom Interior</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_08.jpg" alt="Samriddhi Daksh Avenue Modern Dining Area" data-caption="Modern Dining Area">
+          <div class="gallery-caption">Modern Dining Area</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_10.jpg" alt="Samriddhi Daksh Avenue Modular Kitchen" data-caption="Modular Kitchen">
+          <div class="gallery-caption">Modular Kitchen</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_13.png" alt="Samriddhi Daksh Avenue Drawing Room" data-caption="Drawing Room">
+          <div class="gallery-caption">Drawing Room</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_09.png" alt="Samriddhi Daksh Avenue Clubhouse Lounge" data-caption="Clubhouse Lounge">
+          <div class="gallery-caption">Clubhouse Lounge</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_04.jpg" alt="Samriddhi Daksh Avenue Aerial View of Towers" data-caption="Aerial View of Towers">
+          <div class="gallery-caption">Aerial View of Towers</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_12.jpg" alt="Samriddhi Daksh Avenue Theatre & Club Area" data-caption="Theatre & Club Area">
+          <div class="gallery-caption">Theatre & Club Area</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/public/brochure_images/page_14.jpg" alt="Samriddhi Daksh Avenue Location Map" data-caption="Location Map">
+          <div class="gallery-caption">Location Map</div>
+        </div>
+
       </div>
     </section>
 
@@ -1313,6 +396,12 @@
       <span id="lightbox-prev" class="lightbox-nav">&#10094;</span>
       <img id="lightbox-img" src="">
       <span id="lightbox-next" class="lightbox-nav">&#10095;</span>
+      <p id="lightbox-caption" style="
+        color:white;
+        text-align:center;
+        margin-top:15px;
+        font-size:18px;
+        font-weight:500;"></p>
     </div>
 
 
@@ -1380,16 +469,6 @@
     </section>
   </main>
 
-  <!-- Floating Enquiry Button -->
-  <!-- <a id="floating-enquiry-btn" href="#lead-form" aria-label="Enquire Now">
-    <svg class="icon-20" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2"
-      viewBox="0 0 24 24">
-      <path d="M3 8l7.89 5.26a2 2 0 0 0 2.22 0L21 8"></path>
-      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
-    </svg>
-    Enquire Now
-  </a> -->
-
   <!-- Footer -->
   <footer>
     <div
@@ -1453,17 +532,6 @@
     </svg>
     Enquire
   </a>
-
- 
-  <!-- <div class="wa-qr" id="waQrBtn" role="button" aria-label="Open WhatsApp QR Code" title="Scan to chat on WhatsApp">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <rect x="3" y="3" width="7" height="7"></rect>
-      <rect x="14" y="3" width="7" height="7"></rect>
-      <rect x="14" y="14" width="7" height="7"></rect>
-      <rect x="3" y="14" width="4" height="4"></rect>
-      <rect x="10" y="14" width="4" height="4"></rect>
-    </svg>
-  </div> -->
 </div>
 
 <!-- QR Modal markup -->
@@ -1473,7 +541,7 @@
     <small>Open WhatsApp on your phone and scan this QR to start a chat with +91 89793 33131</small>
 
     <!-- LOCAL QR IMAGE path (replace with hosted path on deploy if needed) -->
-    <img src="/mnt/data/whatsapp_qr.png" alt="WhatsApp QR for +91 89793 33131" id="waQrImage" class="zoomable" />
+    <img src="/public/whatsapp_qr.png" alt="WhatsApp QR for +91 89793 33131" id="waQrImage" class="zoomable" />
 
     <div style="display:flex;gap:10px;justify-content:center">
       <a class="wa-btn" id="waChatFromModal" href="https://wa.me/918979333131?text=Hi%2C%20I%20am%20interested%20in%20Samriddhi%20Daksh%20Avenue" target="_blank" rel="noopener noreferrer" style="text-decoration:none; padding:10px 14px; border-radius:8px;">
@@ -1497,227 +565,7 @@
   }
   </script>
 
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Drawer open/close (Right slide)
-    const drawer = document.getElementById('drawer');
-    const overlay = document.getElementById('drawerOverlay');
-    const openBtn = document.getElementById('openDrawer');
-    const closeBtn = document.getElementById('closeDrawer');
-
-    function openDrawer() {
-      drawer.classList.add('open');
-      overlay.classList.add('show');
-      drawer.setAttribute('aria-hidden', 'false');
-      overlay.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden'; // lock background
-    }
-    function closeDrawer() {
-      drawer.classList.remove('open');
-      overlay.classList.remove('show');
-      drawer.setAttribute('aria-hidden', 'true');
-      overlay.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = ''; // restore
-    }
-    openBtn && openBtn.addEventListener('click', openDrawer);
-    closeBtn && closeBtn.addEventListener('click', closeDrawer);
-    overlay && overlay.addEventListener('click', closeDrawer);
-
-    // Smooth scroll for internal anchors
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', function (e) {
-        const href = this.getAttribute('href');
-        if (href && href.length > 1) {
-          e.preventDefault();
-          const el = document.querySelector(href);
-          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // close drawer automatically on link click (mobile)
-          closeDrawer();
-        }
-      });
-    });
-
-    // Brochure download (main & secondary)
-    function downloadBrochure(url) {
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'Samriddhi_Daksh_Avenue_Brochure.pdf';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    }
-    // primary brochure button in hero
-    document.getElementById('downloadBrochureBtn')?.addEventListener('click', function (e) {
-      e.preventDefault();
-      // local uploaded file path (as requested)
-      downloadBrochure('https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/brochure.pdf');
-    });
-    // secondary brochure button in form
-    document.getElementById('downloadBrochureSecondary')?.addEventListener('click', function (e) {
-      e.preventDefault();
-      downloadBrochure('https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/brochure.pdf');
-    });
-    // third brochure button in form
-    document.getElementById('downloadBrochureBtn1')?.addEventListener('click', function (e) {
-      e.preventDefault();
-      downloadBrochure('https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/brochure.pdf');
-    });
-    // fourth brochure button in form
-    document.getElementById('downloadBrochureBtn2')?.addEventListener('click', function (e) {
-      e.preventDefault();
-      downloadBrochure('https://media.githubusercontent.com/media/geek-o-geek/noidaluxhomes/refs/heads/main/mnt/data/brochure_images/brochure.pdf');
-    });
-
-    // Enquiry form submit -> WhatsApp + success
-    document.getElementById('enquiryForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const email = document.getElementById('email').value.trim();
-
-      if (phone.length < 10) { alert('Enter a valid phone number.'); return; }
-
-      const message = `Hello, I am interested in Samriddhi Daksh Avenue (Sector 150 Noida).%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email || 'Not Provided'}%0APlease share details.`;
-      const whatsappNumber = '918979333131';
-      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-
-      document.getElementById('formSuccess').style.display = 'block';
-      this.reset();
-      document.getElementById('formSuccess').scrollIntoView({ behavior: 'smooth' });
-      // payload for CRM (console)
-      console.log({ name, phone, email, project: 'Samriddhi Daksh Avenue - Sector 150 Noida', timestamp: new Date().toISOString() });
-    });
-
-    // Floating enquiry button smooth scroll
-    document.getElementById('floating-enquiry-btn')?.addEventListener('click', function (e) {
-      const target = document.querySelector('#lead-form');
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-    });
-
-    // Accessibility: close drawer with ESC
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeDrawer();
-    });
-
-    // Prevent accidental horizontal scroll due to transforms on iOS Safari
-    document.documentElement.style.webkitOverflowScrolling = 'touch';
-  </script>
-
-  <script>
-  // Elements
-  const waQrModal = document.getElementById('waQrModal');
-  const waCloseBtn = document.getElementById('waCloseBtn');
-  const overlayToggle = (show) => {
-    if (show) {
-      waQrModal.classList.add('open');
-      waQrModal.setAttribute('aria-hidden','false');
-      document.body.style.overflow='hidden';
-    } else {
-      waQrModal.classList.remove('open');
-      waQrModal.setAttribute('aria-hidden','true');
-      document.body.style.overflow='';
-    }
-  };
-
-  waCloseBtn.addEventListener('click', (e) => {
-    overlayToggle(false);
-  });
-
-  // Close on outside click
-  waQrModal.addEventListener('click', (e) => {
-    if (e.target === waQrModal) overlayToggle(false);
-  });
-
-  // Close on Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') overlayToggle(false);
-  });
-
-  // Progressive enhancement: if image missing, hide QR button
-  const qrImg = document.getElementById('waQrImage');
-  qrImg.addEventListener('error', () => {
-    // hide qr btn if image not available
-    const wrapper = document.querySelector('.wa-fab .wa-qr');
-    if (wrapper) wrapper.style.display = 'none';
-  });
-
-  // Optional: track clicks (analytics) - example console log
-  document.getElementById('waChatBtn').addEventListener('click', () => {
-    console.log('WhatsApp CTA clicked');
-    // fire analytics event here (gtag/pixel)
-  });
-
-  // create overlay dynamically
-  var overlay1 = document.createElement('div');
-  overlay.className = 'lightbox-overlay';
-  overlay.innerHTML = '<img src="" class="zoomable" />';
-  document.body.appendChild(overlay1);
-
-  // handle zoom click
-  document.querySelectorAll('.zoomable').forEach(img => {
-    img.addEventListener('click', () => {
-      overlay.style.display = 'flex';
-      overlay.querySelector('img').src = img.src;
-    });
-  });
-
-  // close on click
-  overlay.addEventListener('click', () => {
-    overlay.style.display = 'none';
-  });
-
-  const modal = document.getElementById('lightbox-modal');
-  const modalImg = document.getElementById('lightbox-img');
-  const closeBtn1 = document.getElementById('lightbox-close');
-
-  closeBtn1.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-  const images = Array.from(document.querySelectorAll('.gallery-grid img'));
-  const nextBtn = document.getElementById('lightbox-next');
-  const prevBtn = document.getElementById('lightbox-prev');
-
-  var currentIndex = 0;
-
-  function openLightbox(index) {
-    currentIndex = index;
-    modalImg.src = images[currentIndex].src;
-    modal.style.display = 'flex';
-  }
-
-  images.forEach((img, index) => {
-    img.addEventListener('click', () => openLightbox(index));
-  });
-
-  nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    modalImg.src = images[currentIndex].src;
-  });
-
-  prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    modalImg.src = images[currentIndex].src;
-  });
-
-  // Click outside image closes lightbox
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) modal.style.display = 'none';
-  });
-
-  // Keyboard controls
-  document.addEventListener('keydown', (e) => {
-    if (modal.style.display === 'flex') {
-      if (e.key === "ArrowRight") nextBtn.click();
-      if (e.key === "ArrowLeft") prevBtn.click();
-      if (e.key === "Escape") modal.style.display = 'none';
-    }
-  });
-</script>
-
-
-
+  <script src="./src/main.js"></script>
 </body>
 
 </html>
