@@ -89,7 +89,7 @@ export default function Hero() {
 
             {/* Brochure Button */}
             <a
-                href="#brochure"
+                href="/brochure_images/brochure.pdf"
                 className="cta-btn-outline inline-flex items-center gap-2"
             >
                 <svg

@@ -36,7 +36,7 @@ export default function MobileDrawer({ open, onClose }) {
           <a href="#lead-form" className="drawer-link" onClick={onClose}>
             Quick Enquiry
           </a>
-          <a href="#brochure" className="drawer-link" onClick={onClose}>
+          <a href="/brochure_images/brochure.pdf" className="drawer-link" onClick={onClose}>
             Download Brochure
           </a>
         </nav>

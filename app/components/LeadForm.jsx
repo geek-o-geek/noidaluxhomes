@@ -106,7 +106,7 @@ export default function LeadForm() {
             </button>
 
             {/* Brochure */}
-            <button
+            {/* <button
               type="button"
               onClick={() => {
                 window.location.href = "#brochure";
@@ -115,7 +115,7 @@ export default function LeadForm() {
                          rounded-xl font-semibold hover:bg-gray-100 transition"
             >
               Download Brochure
-            </button>
+            </button> */}
           </div>
 
           {/* Success message */}

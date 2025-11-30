@@ -110,7 +110,7 @@ export default function Header() {
             Contact / Book Visit
           </a>
           <a
-            href="#brochure"
+            href="/brochure_images/brochure.pdf"
             className="drawer-link"
             onClick={closeDrawer}
           >
